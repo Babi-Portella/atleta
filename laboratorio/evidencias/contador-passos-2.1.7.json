@@ -1,0 +1,183 @@
+{
+  "version": "2.1.7",
+  "source_activity_sha256": "5f2f048fe275bf39f473a642d3a41784972b670d5d61eb56446e092c4f95c271",
+  "changes_since_2.1.6": [
+    "gyro magnitude above 400 dps interrupts sequence; 1200ms recovery after artifact",
+    "restore 1500ms maximum interval for all candidates"
+  ],
+  "cpp_replay_trials": [
+    {
+      "manual_steps": 10,
+      "walk_count": 7,
+      "preparation_false": 0,
+      "handling_false": 0,
+      "samples": 12918
+    },
+    {
+      "manual_steps": 20,
+      "short_steps": true,
+      "walk_count": 22,
+      "preparation_false": 0,
+      "handling_false": 0,
+      "samples": 22408
+    },
+    {
+      "manual_steps": 0,
+      "putting_on_wrist_reported_false_steps_previous": 9,
+      "candidate_false_steps": 0,
+      "samples": 10112
+    }
+  ],
+  "native_regressions_passed": true,
+  "capture_unit_tests_passed": 7,
+  "independent_physical_validation_pending": false,
+  "hardware_status": "STATUS firmware=2.1.7 configured=1 wifi=1 mqtt=1 imu=1 sent=106 steps=0 ble=desligado",
+  "hardware_selftest": "SELFTEST {\"stationary_zero\":true,\"rotation_zero\":true,\"invalid_zero\":true,\"gaps_zero\":true,\"regular_peaks\":true,\"irregular_zero\":true,\"double_peaks_limited\":true,\"short_walk_variable_cadence\":true,\"variable_cadence_steps\":8,\"synthetic_steps\":20,\"distance_formula\":true,\"calories_formula\":true,\"missing_profile_null\":true}",
+  "flash_verified": true,
+  "firmware_sha256": "250deab790338a6a1ecb99312222657ed079dd10921b589c43714b78ca9ccb70",
+  "independent_physical_trial": {
+    "recorded_at_utc": "2026-10-02T17:25:30.325008+00:00",
+    "capture_path": "runtime/calibracao/20261002-holdout-2.1.7-1",
+    "preparation_manual_steps": 0,
+    "preparation_false_steps": 0,
+    "walking_manual_steps": 20,
+    "walking_initial_display": 0,
+    "walking_final_display": 17,
+    "walking_registered_steps": 17,
+    "walking_missing_steps": 3,
+    "walking_relative_error_percent": -15,
+    "short_steps_small_space": true,
+    "user_considered_result_precise_in_available_space": true,
+    "handling_manual_steps": 0,
+    "handling_initial_display": 17,
+    "handling_final_display": 17,
+    "handling_false_steps": 0,
+    "capture_quality": {
+      "samples": 12113,
+      "duration_s": 265.848,
+      "median_sample_interval_ms": 21.0,
+      "largest_sample_gap_ms": 1053,
+      "sample_gaps_over_60ms": 5,
+      "device_dropped_samples": 0,
+      "malformed_lines": 0,
+      "paused_samples": 0,
+      "session_resets": 0,
+      "session_id_changes": 0,
+      "initial_steps": 0,
+      "final_steps": 17,
+      "counted_steps": 17,
+      "manually_counted_steps": null,
+      "count_error": null,
+      "detector_events": {
+        "first_peak": 5,
+        "candidate": 8,
+        "too_close": 7,
+        "motion_artifact": 702,
+        "sample_gap": 3,
+        "restart_cadence": 1,
+        "restart_gap": 6,
+        "early_cadence": 4,
+        "confirmed": 2,
+        "counted": 9,
+        "invalid_sample": 18
+      },
+      "recorded_at_utc": "2026-10-02T17:24:01.358065+00:00",
+      "label": "validacao-independente-2.1.7",
+      "transport": "wifi_mqtt_mysql",
+      "received_packets": 2624,
+      "boot_id": "f03d10fa0be75faf",
+      "final_session_id": "f03d10fa0be75faf-1",
+      "firmware_trace_timeout_s": 600,
+      "stopped_by_file": true
+    },
+    "capture_gaps": [
+      {
+        "after_ms": 387739,
+        "before_ms": 387950,
+        "gap_ms": 211,
+        "phase": "walk_instruction_to_response",
+        "event": 0
+      },
+      {
+        "after_ms": 388137,
+        "before_ms": 388365,
+        "gap_ms": 228,
+        "phase": "walk_instruction_to_response",
+        "event": 0
+      },
+      {
+        "after_ms": 389938,
+        "before_ms": 390464,
+        "gap_ms": 526,
+        "phase": "walk_instruction_to_response",
+        "event": 0
+      },
+      {
+        "after_ms": 390962,
+        "before_ms": 391177,
+        "gap_ms": 215,
+        "phase": "walk_instruction_to_response",
+        "event": 0
+      },
+      {
+        "after_ms": 500104,
+        "before_ms": 501157,
+        "gap_ms": 1053,
+        "phase": "handling",
+        "event": 0
+      }
+    ],
+    "step_changes": [
+      {
+        "ms": 335939,
+        "steps": 4
+      },
+      {
+        "ms": 336630,
+        "steps": 5
+      },
+      {
+        "ms": 337266,
+        "steps": 6
+      },
+      {
+        "ms": 342117,
+        "steps": 10
+      },
+      {
+        "ms": 342770,
+        "steps": 11
+      },
+      {
+        "ms": 343272,
+        "steps": 12
+      },
+      {
+        "ms": 344226,
+        "steps": 13
+      },
+      {
+        "ms": 344882,
+        "steps": 14
+      },
+      {
+        "ms": 345571,
+        "steps": 15
+      },
+      {
+        "ms": 345990,
+        "steps": 16
+      },
+      {
+        "ms": 346722,
+        "steps": 17
+      }
+    ],
+    "notes": [
+      "Resultado de uma unica caminhada; nao estabelece precisao geral.",
+      "As cinco lacunas de captura ocorreram depois do ultimo incremento de passos.",
+      "Sem rotulos individuais por passada, nao e possivel atribuir com certeza os tres passos perdidos."
+    ]
+  },
+  "flashed_image_matches_current_source": true
+}

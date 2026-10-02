@@ -1,0 +1,10 @@
+{
+  "version": "1.1.1",
+  "passed": true,
+  "executed_at": "2026-09-09T20:30:09.199975+00:00",
+  "scope": "Janela Tk real; falhas injetadas; nenhum serviço Docker iniciado",
+  "unexpected_exception_logged": true,
+  "details_opens_log": true,
+  "docker_failure_title_specific": true,
+  "retry_button_enabled": true
+}

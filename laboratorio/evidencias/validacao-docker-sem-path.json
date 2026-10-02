@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "scope": "Docker CLI real local; PATH sem Docker ou Python; sem iniciar containers",
+  "docker_version": "Docker version 29.5.2, build 79eb04c",
+  "cli_found_without_path": true,
+  "credential_helper_found": true,
+  "remote_computer_tested": false
+}

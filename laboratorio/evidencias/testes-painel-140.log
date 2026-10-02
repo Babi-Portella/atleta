@@ -1,0 +1,51 @@
+test_database_errors_do_not_expose_credentials (test_dados_atleta.AthleteDataTests) ... ok
+test_formats_time_decimal_comma_and_rejects_non_numbers (test_dados_atleta.AthleteDataTests) ... ok
+test_no_preparation_does_not_attempt_database (test_dados_atleta.AthleteDataTests) ... ok
+test_old_reading_is_not_live (test_dados_atleta.AthleteDataTests) ... ok
+test_query_filters_authenticated_device_and_real_source (test_dados_atleta.AthleteDataTests) ... ok
+test_unavailable_is_distinct_from_real_zero (test_dados_atleta.AthleteDataTests) ... ok
+test_blank_profile_is_null_and_preserves_server_configuration (test_m5.M5Tests) ... ok
+test_invalid_profile_does_not_replace_saved_data (test_m5.M5Tests) ... ok
+test_loopback_host_is_rejected_before_opening_serial_port (test_m5.M5Tests) ... ok
+test_profile_accepts_decimal_comma (test_m5.M5Tests) ... ok
+test_usb_payload_uses_device_credentials_without_copying_admin_secret (test_m5.M5Tests) ... ok
+test_usb_rejection_is_reported (test_m5.M5Tests) ... ok
+test_usb_requires_explicit_config_acknowledgment (test_m5.M5Tests) ... ok
+test_utf8_ssid_limit_is_checked_in_bytes (test_m5.M5Tests) ... ok
+test_corrupt_snapshot_rejected_before_database_access (test_migracao.MigrationTests) ... ok
+test_missing_file_duplicate_identity_and_invalid_path_rejected (test_migracao.MigrationTests) ... ok
+test_normal_install_has_no_restore_or_database_connection (test_migracao.MigrationTests) ... ok
+test_portable_launcher_finds_child_lab_and_enables_network (test_migracao.MigrationTests) ... ok
+test_valid_snapshot_keeps_nulls_and_zero (test_migracao.MigrationTests) ... ok
+test_arbitrary_open_port_is_not_mqtt (test_rede.NetworkTests) ... ok
+test_corrupted_device_config_does_not_replace_main_config (test_rede.NetworkTests) ... ok
+test_dashboard_requires_healthy_emqx_response (test_rede.NetworkTests) ... ok
+test_mqtt_reply_can_be_fragmented_and_refuse_credentials (test_rede.NetworkTests) ... ok
+test_online_requires_mqtt_and_emqx_dashboard (test_rede.NetworkTests) ... ok
+test_only_loopback_cannot_be_online_on_lan (test_rede.NetworkTests) ... ok
+test_powershell_single_object (test_rede.NetworkTests) ... ok
+test_prefers_real_gateway_and_excludes_unusable_ips (test_rede.NetworkTests) ... ok
+test_rejects_loopback_as_device_address (test_rede.NetworkTests) ... ok
+test_save_preserves_secrets_and_exports_only_address (test_rede.NetworkTests) ... ok
+test_cli_environment_finds_credential_helper_without_changing_system_path (test_servidor.ServerTests) ... ok
+test_cli_reinitialization_keeps_ports_chosen_by_panel (test_servidor.ServerTests) ... ok
+test_desktop_cli_timeout_uses_fallback_and_does_not_change_context (test_servidor.ServerTests) ... ok
+test_download_network_failure_has_actionable_message (test_servidor.ServerTests) ... ok
+test_engine_failure_records_original_docker_reason (test_servidor.ServerTests) ... ok
+test_existing_engine_is_used_without_restart (test_servidor.ServerTests) ... ok
+test_fallback_launches_desktop_from_per_user_installation (test_servidor.ServerTests) ... ok
+test_finds_per_user_installation_without_docker_on_path (test_servidor.ServerTests) ... ok
+test_first_preparation_and_network_toggle_preserve_credentials_and_ports (test_servidor.ServerTests) ... ok
+test_log_masks_generated_credentials (test_servidor.ServerTests) ... ok
+test_log_permission_failure_does_not_hide_original_error (test_servidor.ServerTests) ... ok
+test_new_folder_cannot_replace_credentials_for_existing_volumes (test_servidor.ServerTests) ... ok
+test_partial_preparation_is_not_replaced (test_servidor.ServerTests) ... ok
+test_start_checks_health_before_reporting_success (test_servidor.ServerTests) ... ok
+test_stop_does_not_start_docker_when_engine_is_off (test_servidor.ServerTests) ... ok
+test_stop_targets_only_dedicated_services_without_removing_volumes (test_servidor.ServerTests) ... ok
+test_unexpected_failure_records_trace_and_redacts_wifi_password (test_servidor.ServerTests) ... ok
+
+----------------------------------------------------------------------
+Ran 46 tests in 1.366s
+
+OK

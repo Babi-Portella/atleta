@@ -1,0 +1,257 @@
+Processing m5stickc-plus2 (platform: espressif32@6.10.0; board: m5stick-c; framework: arduino)
+--------------------------------------------------------------------------------
+Library Manager: Installing m5stack/M5Unified @ 0.2.21
+Downloading 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Library Manager: M5Unified@0.2.21 has been installed!
+Library Manager: Resolving dependencies...
+Library Manager: Installing M5GFX @ >=0.2.28
+Downloading 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Library Manager: M5GFX@0.2.31 has been installed!
+Library Manager: Installing m5stack/M5GFX @ 0.2.28
+Downloading 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Library Manager: M5GFX@0.2.28 has been installed!
+Library Manager: Installing bblanchon/ArduinoJson @ 7.4.2
+Downloading 0% 10% 20% 30% 40% 50% 60% 70% 80% 90%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Library Manager: ArduinoJson@7.4.2 has been installed!
+Library Manager: Installing knolleary/PubSubClient @ 2.8
+Downloading 0% 10% 20%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Library Manager: PubSubClient@2.8.0 has been installed!
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/espressif32/m5stick-c.html
+PLATFORM: Espressif 32 (6.10.0) > M5Stick-C
+HARDWARE: ESP32 240MHz, 320KB RAM, 4MB Flash
+DEBUG: Current (cmsis-dap) External (cmsis-dap, esp-bridge, esp-prog, iot-bus-jtag, jlink, minimodule, olimex-arm-usb-ocd, olimex-arm-usb-ocd-h, olimex-arm-usb-tiny-h, olimex-jtag-tiny, tumpa)
+PACKAGES: 
+ - framework-arduinoespressif32 @ 3.20017.241212+sha.dcc1105b 
+ - tool-esptoolpy @ 1.40501.0 (4.5.1) 
+ - toolchain-xtensa-esp32 @ 8.4.0+2021r2-patch5
+LDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ soft
+Found 38 compatible libraries
+Scanning dependencies...
+Dependency Graph
+|-- M5Unified @ 0.2.21
+|-- M5GFX @ 0.2.28
+|-- ArduinoJson @ 7.4.2
+|-- PubSubClient @ 2.8.0
+|-- ESP32 BLE Arduino @ 2.0.0
+|-- Preferences @ 2.0.0
+|-- WiFi @ 2.0.0
+Building in release mode
+Compiling .pio\build\m5stickc-plus2\src\main.cpp.o
+Building .pio\build\m5stickc-plus2\bootloader.bin
+Generating partitions .pio\build\m5stickc-plus2\partitions.bin
+esptool.py v4.5.1
+Creating esp32 image...
+Merged 1 ELF section
+Successfully created esp32 image.
+Compiling .pio\build\m5stickc-plus2\libb5a\SPI\SPI.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib52c\Wire\Wire.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\M5GFX.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\Fonts\IPA\lgfx_font_japan.c.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\Fonts\efont\lgfx_efont_cn.c.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\Fonts\efont\lgfx_efont_ja.c.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\Fonts\efont\lgfx_efont_kr.c.o
+Archiving .pio\build\m5stickc-plus2\libb5a\libSPI.a
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\Fonts\efont\lgfx_efont_tw.c.o
+Archiving .pio\build\m5stickc-plus2\lib52c\libWire.a
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\utility\lgfx_miniz.c.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\utility\lgfx_pngle.c.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\utility\lgfx_qoi.c.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\utility\lgfx_qrcode.c.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\utility\lgfx_tjpgd.c.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\LGFXBase.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\LGFX_Button.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\LGFX_Sprite.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\lgfx_fonts.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\misc\DividedFrameBuffer.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\misc\SpriteBuffer.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\misc\common_function.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\misc\pixelcopy.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\panel\Panel_AMOLED.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\panel\Panel_Device.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\panel\Panel_ED2208.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\panel\Panel_EPDiy.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\panel\Panel_FrameBufferBase.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\panel\Panel_GDEW0154D67.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\panel\Panel_GDEW0154M09.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\panel\Panel_HasBuffer.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\panel\Panel_IT8951.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\panel\Panel_LCD.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\panel\Panel_M5HDMI.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\panel\Panel_M5UnitGLASS.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\panel\Panel_M5UnitLCD.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\panel\Panel_SSD1306.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\panel\Panel_SSD1677.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\panel\Panel_TM1680.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\platforms\esp32\Bus_EPD.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\platforms\esp32\Bus_I2C.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\platforms\esp32\Bus_Parallel8.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\platforms\esp32\Bus_SPI.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\platforms\esp32\Light_PWM.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\platforms\esp32\Panel_CVBS.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\platforms\esp32\Panel_EPD.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\platforms\esp32\common.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\platforms\esp32c3\Bus_Parallel8.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\platforms\esp32p4\Bus_DSI.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\platforms\esp32p4\Panel_DSI.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\platforms\esp32p4\Panel_LT8912B.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\platforms\esp32p4\Touch_ST7123.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\platforms\esp32s2\Bus_Parallel16.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\platforms\esp32s2\Bus_Parallel8.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\platforms\esp32s3\Bus_Parallel16.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\platforms\esp32s3\Bus_Parallel8.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\platforms\framebuffer\Panel_fb.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\platforms\framebuffer\common.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\platforms\sdl\Panel_sdl.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\platforms\sdl\common.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\touch\Touch_CHSC6540.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\touch\Touch_CSTxxx.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\touch\Touch_FT5x06.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8fc\M5GFX@0.2.28\lgfx\v1\touch\Touch_GT911.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\M5Unified.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\Button_Class.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\I2C_Class.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\IMU_Class.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\LED_Class.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\Log_Class.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\M5IOE1_Class.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\M5Timer.cpp.o
+Archiving .pio\build\m5stickc-plus2\lib8fc\libM5GFX@0.2.28.a
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\Mic_Class.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\PI4IOE5V6408_Class.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\Power_Class.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\RTC_Class.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\Speaker_Class.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\Touch_Class.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\imu\AK8963_Class.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\imu\BMI270_Class.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\imu\BMM150_Class.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\imu\IMU_Base.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\imu\MPU6886_Class.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\imu\SH200Q_Class.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\led\LED_PMIC_Class.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\led\LED_PaperMono_Class.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\led\LED_PowerHub_Class.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\led\LED_Strip_Class.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\power\AW32001_Class.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\power\AXP192_Class.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\power\AXP2101_Class.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\power\BQ27220_Class.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\power\INA226_Class.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\power\INA3221_Class.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\power\IP5306_Class.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\power\M5PM1_Class.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\rtc\PCF8563_Class.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\rtc\RTC_Base.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\rtc\RTC_PowerHub_Class.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib8a2\M5Unified\utility\rtc\RX8130_Class.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib53a\PubSubClient\PubSubClient.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib0b3\BLE\BLE2902.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib0b3\BLE\BLE2904.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib0b3\BLE\BLEAddress.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib0b3\BLE\BLEAdvertisedDevice.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib0b3\BLE\BLEAdvertising.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib0b3\BLE\BLEBeacon.cpp.o
+Archiving .pio\build\m5stickc-plus2\lib8a2\libM5Unified.a
+Compiling .pio\build\m5stickc-plus2\lib0b3\BLE\BLECharacteristic.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib0b3\BLE\BLECharacteristicMap.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib0b3\BLE\BLEClient.cpp.o
+Archiving .pio\build\m5stickc-plus2\lib53a\libPubSubClient.a
+Compiling .pio\build\m5stickc-plus2\lib0b3\BLE\BLEDescriptor.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib0b3\BLE\BLEDescriptorMap.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib0b3\BLE\BLEDevice.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib0b3\BLE\BLEEddystoneTLM.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib0b3\BLE\BLEEddystoneURL.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib0b3\BLE\BLEExceptions.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib0b3\BLE\BLEHIDDevice.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib0b3\BLE\BLERemoteCharacteristic.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib0b3\BLE\BLERemoteDescriptor.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib0b3\BLE\BLERemoteService.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib0b3\BLE\BLEScan.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib0b3\BLE\BLESecurity.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib0b3\BLE\BLEServer.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib0b3\BLE\BLEService.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib0b3\BLE\BLEServiceMap.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib0b3\BLE\BLEUUID.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib0b3\BLE\BLEUtils.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib0b3\BLE\BLEValue.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib0b3\BLE\FreeRTOS.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib0b3\BLE\GeneralUtils.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib342\Preferences\Preferences.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib170\WiFi\WiFi.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib170\WiFi\WiFiAP.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib170\WiFi\WiFiClient.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib170\WiFi\WiFiGeneric.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib170\WiFi\WiFiMulti.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib170\WiFi\WiFiSTA.cpp.o
+Archiving .pio\build\m5stickc-plus2\lib0b3\libBLE.a
+Compiling .pio\build\m5stickc-plus2\lib170\WiFi\WiFiScan.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib170\WiFi\WiFiServer.cpp.o
+Compiling .pio\build\m5stickc-plus2\lib170\WiFi\WiFiUdp.cpp.o
+Archiving .pio\build\m5stickc-plus2\lib342\libPreferences.a
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\Esp.cpp.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\FirmwareMSC.cpp.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\FunctionalInterrupt.cpp.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\HWCDC.cpp.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\HardwareSerial.cpp.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\IPAddress.cpp.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\IPv6Address.cpp.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\MD5Builder.cpp.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\Print.cpp.o
+Archiving .pio\build\m5stickc-plus2\lib170\libWiFi.a
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\Stream.cpp.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\StreamString.cpp.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\Tone.cpp.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\USB.cpp.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\USBCDC.cpp.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\USBMSC.cpp.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\WMath.cpp.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\WString.cpp.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\base64.cpp.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\cbuf.cpp.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\esp32-hal-adc.c.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\esp32-hal-bt.c.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\esp32-hal-cpu.c.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\esp32-hal-dac.c.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\esp32-hal-gpio.c.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\esp32-hal-i2c-slave.c.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\esp32-hal-i2c.c.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\esp32-hal-ledc.c.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\esp32-hal-matrix.c.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\esp32-hal-misc.c.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\esp32-hal-psram.c.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\esp32-hal-rgb-led.c.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\esp32-hal-rmt.c.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\esp32-hal-sigmadelta.c.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\esp32-hal-spi.c.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\esp32-hal-time.c.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\esp32-hal-timer.c.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\esp32-hal-tinyusb.c.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\esp32-hal-touch.c.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\esp32-hal-uart.c.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\firmware_msc_fat.c.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\libb64\cdecode.c.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\libb64\cencode.c.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\main.cpp.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\stdlib_noniso.c.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\wiring_pulse.c.o
+Compiling .pio\build\m5stickc-plus2\FrameworkArduino\wiring_shift.c.o
+Archiving .pio\build\m5stickc-plus2\libFrameworkArduino.a
+Linking .pio\build\m5stickc-plus2\firmware.elf
+Retrieving maximum program size .pio\build\m5stickc-plus2\firmware.elf
+Checking size .pio\build\m5stickc-plus2\firmware.elf
+Advanced Memory Usage is available via "PlatformIO Home > Project Inspect"
+RAM:   [==        ]  19.0% (used 62408 bytes from 327680 bytes)
+Flash: [=====     ]  53.4% (used 1784949 bytes from 3342336 bytes)
+Building .pio\build\m5stickc-plus2\firmware.bin
+esptool.py v4.5.1
+Creating esp32 image...
+Merged 27 ELF sections
+Successfully created esp32 image.
+======================== [SUCCESS] Took 197.78 seconds ========================

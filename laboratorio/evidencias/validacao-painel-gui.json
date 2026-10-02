@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "gui_toolkit": "Tk",
+  "native_window_tested": true,
+  "ip": "192.168.0.67",
+  "server_state": "online",
+  "startup_did_not_change_config": true,
+  "button_saved_ip": true,
+  "wifi_preserved": true,
+  "copy_button_verified": true,
+  "worker_did_not_block_window": true,
+  "minimum_width_checked": 590,
+  "athlete_button_opens_single_window": true,
+  "scope": "Janela Python real, configuração temporária; sem acesso à placa"
+}

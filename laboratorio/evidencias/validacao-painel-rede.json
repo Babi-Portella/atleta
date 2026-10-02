@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "executed_at": "2026-09-09T10:52:00.450058+00:00",
+  "ip": "192.168.0.67",
+  "state": "online",
+  "mqtt_port": 18830,
+  "dashboard_port": 18084,
+  "existing_ports_preserved": true,
+  "credentials_preserved": true,
+  "mysql_remained_loopback_only": true,
+  "scope": "Acesso pelo proprio IP LAN; acesso por outro dispositivo e M5 nao testados",
+  "configuration_restored": true,
+  "services_stopped_after_test": true
+}

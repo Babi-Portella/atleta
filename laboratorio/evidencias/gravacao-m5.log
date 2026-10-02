@@ -1,0 +1,107 @@
+esptool.py v4.8.1
+Serial port COM4
+Connecting....
+Chip is ESP32-PICO-V3-02 (revision v3.1)
+Features: WiFi, BT, Dual Core, 240MHz, Embedded Flash, Embedded PSRAM, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: 00:4b:12:c4:9e:40
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00005fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Flash will be erased from 0x0000e000 to 0x0000ffff...
+Flash will be erased from 0x00010000 to 0x001c4fff...
+SHA digest in image updated
+Compressed 17536 bytes to 12201...
+Writing at 0x00001000... (100 %)
+Wrote 17536 bytes (12201 compressed) at 0x00001000 in 0.5 seconds (effective 259.0 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 146...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (146 compressed) at 0x00008000 in 0.1 seconds (effective 475.5 kbit/s)...
+Hash of data verified.
+Compressed 8192 bytes to 47...
+Writing at 0x0000e000... (100 %)
+Wrote 8192 bytes (47 compressed) at 0x0000e000 in 0.1 seconds (effective 649.7 kbit/s)...
+Hash of data verified.
+Compressed 1786736 bytes to 1146476...
+Writing at 0x00010000... (1 %)
+Writing at 0x000188f9... (2 %)
+Writing at 0x00024df5... (4 %)
+Writing at 0x0002fd79... (5 %)
+Writing at 0x0003a5f4... (7 %)
+Writing at 0x00048de5... (8 %)
+Writing at 0x00053cd3... (10 %)
+Writing at 0x00059ec2... (11 %)
+Writing at 0x0005ff4f... (12 %)
+Writing at 0x00065840... (14 %)
+Writing at 0x0006add3... (15 %)
+Writing at 0x00070d97... (17 %)
+Writing at 0x00076a4d... (18 %)
+Writing at 0x0007c7f4... (20 %)
+Writing at 0x00082452... (21 %)
+Writing at 0x00087e27... (22 %)
+Writing at 0x0008d5e5... (24 %)
+Writing at 0x00093127... (25 %)
+Writing at 0x000981ff... (27 %)
+Writing at 0x0009d618... (28 %)
+Writing at 0x000a291c... (30 %)
+Writing at 0x000a7ab3... (31 %)
+Writing at 0x000ada25... (32 %)
+Writing at 0x000b35b1... (34 %)
+Writing at 0x000b8cb4... (35 %)
+Writing at 0x000be0f4... (37 %)
+Writing at 0x000c3623... (38 %)
+Writing at 0x000c8a33... (40 %)
+Writing at 0x000cee73... (41 %)
+Writing at 0x000d4b4b... (42 %)
+Writing at 0x000da6fd... (44 %)
+Writing at 0x000e0403... (45 %)
+Writing at 0x000e5c6d... (47 %)
+Writing at 0x000eb26d... (48 %)
+Writing at 0x000f0e9e... (50 %)
+Writing at 0x000f674c... (51 %)
+Writing at 0x000fc1a5... (52 %)
+Writing at 0x00101d4e... (54 %)
+Writing at 0x00108ccc... (55 %)
+Writing at 0x0010ed61... (57 %)
+Writing at 0x0011460b... (58 %)
+Writing at 0x0011a0fc... (60 %)
+Writing at 0x0011f6a3... (61 %)
+Writing at 0x00124e36... (62 %)
+Writing at 0x0012a69f... (64 %)
+Writing at 0x00130658... (65 %)
+Writing at 0x001366c6... (67 %)
+Writing at 0x0013c68a... (68 %)
+Writing at 0x00141eb9... (70 %)
+Writing at 0x00147194... (71 %)
+Writing at 0x0014cee8... (72 %)
+Writing at 0x00152740... (74 %)
+Writing at 0x0015788d... (75 %)
+Writing at 0x0015cd66... (77 %)
+Writing at 0x001621ab... (78 %)
+Writing at 0x0016770e... (80 %)
+Writing at 0x0016cf8c... (81 %)
+Writing at 0x00172bb9... (82 %)
+Writing at 0x00178565... (84 %)
+Writing at 0x0017ddea... (85 %)
+Writing at 0x001846ef... (87 %)
+Writing at 0x0018cfd9... (88 %)
+Writing at 0x00195855... (90 %)
+Writing at 0x0019b876... (91 %)
+Writing at 0x001a09dc... (92 %)
+Writing at 0x001a8866... (94 %)
+Writing at 0x001ae084... (95 %)
+Writing at 0x001b3807... (97 %)
+Writing at 0x001b93c2... (98 %)
+Writing at 0x001be6f6... (100 %)
+Wrote 1786736 bytes (1146476 compressed) at 0x00010000 in 26.0 seconds (effective 550.6 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
+Gravando aplicativo do laboratorio no M5StickC Plus2. Configuracao NVS preservada.

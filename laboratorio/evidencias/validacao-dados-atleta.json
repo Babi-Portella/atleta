@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "executed_at_utc": "2026-09-10T02:14:14.990955+00:00",
+  "scope": "Janela Tk real e MySQL local real; erros e vazio simulados após captura",
+  "real_rows_displayed": 120,
+  "real_source_only": true,
+  "display_matches_stored_payload": true,
+  "refresh_button_tested": true,
+  "window_responsive": true,
+  "minimum_size_checked": [
+    800,
+    660
+  ],
+  "missing_values_unavailable": true,
+  "stale_state_verified": true,
+  "error_state_verified": true,
+  "empty_state_verified": true,
+  "database_mutated": false
+}

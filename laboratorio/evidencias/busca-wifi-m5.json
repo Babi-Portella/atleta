@@ -1,0 +1,16 @@
+[
+  {
+    "scan_success": true,
+    "networks_seen": 16,
+    "configured_ssid_seen": false,
+    "matching_networks": [
+      {
+        "exact_name": false,
+        "ssid": "CLARO11",
+        "channel": 1,
+        "rssi_dbm": -40,
+        "auth_mode": 4
+      }
+    ]
+  }
+]

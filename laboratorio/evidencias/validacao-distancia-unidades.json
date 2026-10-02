@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "scope": "Formatação da tela Windows; valores de exemplo locais, sem publicação MQTT",
+  "examples": [
+    {
+      "input_km": 0,
+      "display": "0 m"
+    },
+    {
+      "input_km": 0.0003,
+      "display": "0,3 m"
+    },
+    {
+      "input_km": 0.03,
+      "display": "30 m"
+    },
+    {
+      "input_km": 0.25,
+      "display": "250 m"
+    },
+    {
+      "input_km": 0.999,
+      "display": "999 m"
+    },
+    {
+      "input_km": 0.9999,
+      "display": "999,9 m"
+    },
+    {
+      "input_km": 0.999999,
+      "display": "999,999 m"
+    },
+    {
+      "input_km": 1,
+      "display": "1,000 km"
+    },
+    {
+      "input_km": 1.001,
+      "display": "1,001 km"
+    },
+    {
+      "input_km": 1.125,
+      "display": "1,125 km"
+    }
+  ],
+  "unavailable_preserved": true,
+  "stored_value_unchanged": true
+}

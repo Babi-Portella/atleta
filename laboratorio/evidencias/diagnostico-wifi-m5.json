@@ -1,0 +1,64 @@
+{
+  "reports": [],
+  "events": [
+    "STATUS firmware=2.0.0 configured=1 wifi=0 mqtt=0 imu=1 sent=0 steps=0 ble=desligado",
+    "WIFI_DISCONNECTED reason=201",
+    "WIFI_DISCONNECTED reason=201",
+    "WIFI_DISCONNECTED reason=201",
+    "WIFI_DISCONNECTED reason=201",
+    "WIFI_DISCONNECTED reason=201",
+    "WIFI_DISCONNECTED reason=201",
+    "WIFI_DISCONNECTED reason=201",
+    "WIFI_DISCONNECTED reason=201"
+  ],
+  "latest": {
+    "schema_version": 1,
+    "firmware_version": "2.0.0",
+    "source": "device",
+    "device_id": "m5-atleta-01",
+    "boot_id": "b111974a9d3ac990",
+    "sample_seq": 12,
+    "uptime_ms": 26007,
+    "accel_x_g": -0.215161,
+    "accel_y_g": -0.065049,
+    "accel_z_g": 0.968214,
+    "accel_g": [
+      -0.215161,
+      -0.065049,
+      0.968214
+    ],
+    "gyro_dps": [
+      0.183105,
+      0.244141,
+      0
+    ],
+    "athlete_id": null,
+    "sessao": "b111974a9d3ac990-1",
+    "sessao_ativa": true,
+    "duracao_s": 25,
+    "passos": 0,
+    "distancia_km": null,
+    "calorias_kcal": null,
+    "ritmo_min_km": null,
+    "bpm": null,
+    "temperatura_pele_c": null,
+    "latitude": null,
+    "longitude": null,
+    "gps": "sem_modulo_configurado",
+    "wifi": "desconectado",
+    "bluetooth": "desligado",
+    "battery_mv": 3946,
+    "battery_percent_estimate": 80,
+    "wifi_rssi_dbm": null,
+    "mqtt_connected": false,
+    "measurement_status": {
+      "passos": "estimativa_mpu6886",
+      "distancia": "sem_comprimento_passo",
+      "calorias": "sem_peso_ou_met",
+      "bpm": "sensor_nao_configurado",
+      "temperatura_pele": "sensor_nao_configurado",
+      "gps": "sensor_nao_configurado",
+      "bateria": "percentual_estimado_por_tensao"
+    }
+  }
+}

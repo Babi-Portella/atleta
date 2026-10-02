@@ -1,0 +1,36 @@
+{
+  "checked_at_utc": "2026-09-28T05:15:12.724566+00:00",
+  "firmware_version": "2.1.1",
+  "firmware_sha256": "52fb3974741968f09742b60fd3766fad59356aad06a04d5a6fce82fea9633811",
+  "user_observation_2_1_0": {
+    "real_steps": 8,
+    "displayed_steps": 5,
+    "display": "M5",
+    "placement": "wrist"
+  },
+  "synthetic_variable_cadence": {
+    "expected": 8,
+    "version_2_1_0": 5,
+    "version_2_1_1": 8
+  },
+  "native_regressions_passed": true,
+  "device_status": "STATUS firmware=2.1.1 configured=1 wifi=0 mqtt=0 imu=1 sent=0 steps=0 ble=desligado",
+  "device_selftest": {
+    "stationary_zero": true,
+    "rotation_zero": true,
+    "invalid_zero": true,
+    "gaps_zero": true,
+    "regular_peaks": true,
+    "irregular_zero": true,
+    "double_peaks_limited": true,
+    "short_walk_variable_cadence": true,
+    "variable_cadence_steps": 8,
+    "synthetic_steps": 20,
+    "distance_formula": true,
+    "calories_formula": true,
+    "missing_profile_null": true
+  },
+  "device_selftest_passed": true,
+  "nvs_preserved": true,
+  "walking_accuracy_after_update_verified": false
+}

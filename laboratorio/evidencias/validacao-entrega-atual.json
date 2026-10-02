@@ -1,0 +1,78 @@
+{
+  "checked_at_local": "2026-09-10T12:55:20.321891-03:00",
+  "scope": "Computador local do projeto; nenhum teste no servidor do professor",
+  "services_started_for_check": true,
+  "server_tests_passed": true,
+  "server_checks_passed": 28,
+  "mqtt_device": {
+    "http_status": 404,
+    "connected": false
+  },
+  "stored_physical_data": {
+    "physical_rows": 2136,
+    "first_received_at_utc": "2026-09-10T01:46:43.587000+00:00",
+    "last_received_at_utc": "2026-09-10T02:59:50.872000+00:00",
+    "sessions": 2
+  },
+  "serial_devices": [],
+  "current_physical_snapshots": [
+    {
+      "checked_at_local": "2026-09-10T12:54:40.383244-03:00",
+      "id": 2140,
+      "received_at_local": "2026-09-09T23:59:50.872000-03:00",
+      "age_seconds": 46489.504,
+      "payload": {
+        "source": "device",
+        "boot_id": "5514d21841b55d9a",
+        "sample_seq": 709,
+        "uptime_ms": 1420451,
+        "accel_x_g": 0.316803,
+        "accel_y_g": -0.081045,
+        "accel_z_g": 0.946553,
+        "battery_mv": 4066,
+        "battery_percent_estimate": 96,
+        "passos": 0,
+        "duracao_s": 1,
+        "distancia_km": 0,
+        "bpm": null,
+        "temperatura_pele_c": null,
+        "latitude": null,
+        "longitude": null
+      }
+    },
+    {
+      "checked_at_local": "2026-09-10T12:54:46.389511-03:00",
+      "id": 2140,
+      "received_at_local": "2026-09-09T23:59:50.872000-03:00",
+      "age_seconds": 46495.516,
+      "payload": {
+        "source": "device",
+        "boot_id": "5514d21841b55d9a",
+        "sample_seq": 709,
+        "uptime_ms": 1420451,
+        "accel_x_g": 0.316803,
+        "accel_y_g": -0.081045,
+        "accel_z_g": 0.946553,
+        "battery_mv": 4066,
+        "battery_percent_estimate": 96,
+        "passos": 0,
+        "duracao_s": 1,
+        "distancia_km": 0,
+        "bpm": null,
+        "temperatura_pele_c": null,
+        "latitude": null,
+        "longitude": null
+      }
+    }
+  ],
+  "prior_physical_validation": {
+    "passed": true,
+    "firmware_sha256": "9ec0bffa8b21c70282726d946e4bde7b2ba37608d54615f915a37d8043cd4f7e"
+  },
+  "assessment": {
+    "server_requirements_verified": true,
+    "live_m5_stream_verified": false,
+    "other_lab_computer_verified": false,
+    "external_bpm_skin_temperature_gps_implemented": false
+  }
+}

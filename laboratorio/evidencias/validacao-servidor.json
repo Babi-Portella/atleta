@@ -1,0 +1,193 @@
+{
+  "executed_at_utc": "2026-09-10T15:54:39.672093+00:00",
+  "target": {
+    "host": "127.0.0.1",
+    "mqtt_port": 18830,
+    "mysql_port": 33070,
+    "dashboard_port": 18084
+  },
+  "scope": "Broker EMQX e MySQL reais; cliente MQTT de teste no computador",
+  "physical_device_tested": false,
+  "sensor_values": "Sinteticos; todas as mensagens validas de teste usam source=test",
+  "checks": [
+    {
+      "name": "Dashboard acessivel com conta administrativa",
+      "passed": true
+    },
+    {
+      "name": "Conector MySQL conectado",
+      "passed": true
+    },
+    {
+      "name": "Acao MySQL conectada",
+      "passed": true
+    },
+    {
+      "name": "Regra de persistencia habilitada",
+      "passed": true
+    },
+    {
+      "name": "Autenticacao Password-Based MySQL ativa",
+      "passed": true
+    },
+    {
+      "name": "Fonte de autorizacao MySQL ativa",
+      "passed": true
+    },
+    {
+      "name": "Senha incorreta recusada",
+      "passed": true,
+      "detail": "CONNACK=134"
+    },
+    {
+      "name": "Usuario inexistente recusado",
+      "passed": true,
+      "detail": "CONNACK=135"
+    },
+    {
+      "name": "Conexao anonima recusada",
+      "passed": true,
+      "detail": "CONNACK=134"
+    },
+    {
+      "name": "Client ID diferente do cadastro recusado",
+      "passed": true,
+      "detail": "CONNACK=135"
+    },
+    {
+      "name": "Observador conecta com credenciais validas",
+      "passed": true
+    },
+    {
+      "name": "Observador pode assinar telemetria",
+      "passed": true
+    },
+    {
+      "name": "Assinatura global # bloqueada",
+      "passed": true
+    },
+    {
+      "name": "Publicador conecta com credenciais validas",
+      "passed": true
+    },
+    {
+      "name": "Publicador nao pode assinar topicos",
+      "passed": true
+    },
+    {
+      "name": "Publicacao autorizada recebe PUBACK de sucesso",
+      "passed": true
+    },
+    {
+      "name": "Observador recebe a mensagem publicada",
+      "passed": true
+    },
+    {
+      "name": "Mensagem MQTT gravada no MySQL",
+      "passed": true
+    },
+    {
+      "name": "Valores e identidade preservados",
+      "passed": true
+    },
+    {
+      "name": "Reenvio da mesma amostra nao duplica o registro",
+      "passed": true
+    },
+    {
+      "name": "Publicacao no topico de outro dispositivo bloqueada",
+      "passed": true,
+      "detail": "PUBACK=135"
+    },
+    {
+      "name": "Publicacao bloqueada nao chega ao observador",
+      "passed": true
+    },
+    {
+      "name": "Publicacao bloqueada nao e persistida",
+      "passed": true
+    },
+    {
+      "name": "Observador nao pode publicar",
+      "passed": true
+    },
+    {
+      "name": "Mensagem sem os campos obrigatorios nao e gravada",
+      "passed": true
+    },
+    {
+      "name": "MQTT 3.1.1 aceito com autenticacao",
+      "passed": true
+    },
+    {
+      "name": "MQTT 3.1.1 QoS 0 gravado no banco",
+      "passed": true
+    },
+    {
+      "name": "Nova conexao retoma a persistencia",
+      "passed": true
+    }
+  ],
+  "emqx_versions": [
+    "6.1.1"
+  ],
+  "mysql_version": "8.4.8",
+  "test_boot_id": "33e19d47116f451abbc0948078a7d796",
+  "persisted_test_row_ids": [
+    2141,
+    2143,
+    2144
+  ],
+  "action_metrics": {
+    "metrics": {
+      "success": 0,
+      "dropped": 0,
+      "matched": 4,
+      "failed": 0,
+      "received": 0,
+      "rate": 0.0,
+      "inflight": 0,
+      "rate_last5m": 0.0,
+      "rate_max": 0.0,
+      "late_reply": 0,
+      "retried": 0,
+      "dropped.resource_stopped": 0,
+      "dropped.resource_not_found": 0,
+      "dropped.queue_full": 0,
+      "dropped.other": 0,
+      "dropped.expired": 0,
+      "aggregated_upload.success": 0,
+      "aggregated_upload.failure": 0,
+      "queuing": 0,
+      "queuing_bytes": 0
+    },
+    "node_metrics": [
+      {
+        "node": "emqx@emqx.atleta.local",
+        "metrics": {
+          "success": 0,
+          "dropped": 0,
+          "matched": 4,
+          "failed": 0,
+          "received": 0,
+          "rate": 0.0,
+          "inflight": 0,
+          "rate_last5m": 0.0,
+          "rate_max": 0.0,
+          "late_reply": 0,
+          "retried": 0,
+          "dropped.resource_stopped": 0,
+          "dropped.resource_not_found": 0,
+          "dropped.queue_full": 0,
+          "dropped.other": 0,
+          "dropped.expired": 0,
+          "aggregated_upload.success": 0,
+          "aggregated_upload.failure": 0,
+          "queuing": 0,
+          "queuing_bytes": 0
+        }
+      }
+    ]
+  },
+  "passed": true
+}

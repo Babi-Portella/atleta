@@ -1,0 +1,205 @@
+{
+  "executed_at_utc": "2026-09-10T17:26:54.434537+00:00",
+  "project": "atleta-migracao-teste-20260910142654",
+  "scope": "Instalação vazia isolada neste PC; computador de destino não testado.",
+  "checks": [
+    {
+      "name": "EXE prepara instalação vazia sem Python no PATH",
+      "passed": true
+    },
+    {
+      "name": "Destino usa credenciais novas e separadas da origem",
+      "passed": true
+    },
+    {
+      "name": "MySQL de destino começa vazio",
+      "passed": true
+    },
+    {
+      "name": "Falha durante a importação reverte todos os registros",
+      "passed": true
+    },
+    {
+      "name": "Iniciar restaura e confere integralmente o histórico",
+      "passed": true
+    },
+    {
+      "name": "Repetir Iniciar não duplica o histórico",
+      "passed": true
+    },
+    {
+      "name": "Dados conflitantes não substituem registros existentes",
+      "passed": true
+    },
+    {
+      "name": "28 verificações MQTT/MySQL passam no servidor restaurado",
+      "passed": true
+    },
+    {
+      "name": "Novas mensagens coexistem com o histórico restaurado",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "snapshot": {
+    "format_version": 1,
+    "created_at_utc": "2026-09-10T17:26:54.638107+00:00",
+    "database": "athlete_lab",
+    "table": "telemetry",
+    "columns": [
+      "id",
+      "received_at",
+      "mqtt_username",
+      "client_id",
+      "topic",
+      "boot_id",
+      "sample_seq",
+      "source",
+      "accel_x_g",
+      "accel_y_g",
+      "accel_z_g",
+      "payload"
+    ],
+    "rows": 2313,
+    "physical_rows": 2307,
+    "test_rows": 6,
+    "first_received_at_utc": "2026-09-09T03:35:07.138",
+    "last_received_at_utc": "2026-09-10T16:04:02.021",
+    "file": "telemetria.jsonl.gz",
+    "sha256": "031ee86f3622276fc6a6d62a8dd2a9ff62fa72ac016c4c780e939b0c88a6a08d",
+    "content_sha256": "9369d69c07701e64c65f466fc7305581c035464bb5f9d48171b50bf9b0a9a76a"
+  },
+  "exe_sha256": "eee2a1a8583404648f38d848d0a65e1f204b09ad580c01a39aa00cf6c9694354",
+  "ports": {
+    "mqtt_port": 54962,
+    "dashboard_port": 54963,
+    "mysql_port": 54964
+  },
+  "restoration": {
+    "verified_at_utc": "2026-09-10T17:27:11.568381+00:00",
+    "snapshot_sha256": "031ee86f3622276fc6a6d62a8dd2a9ff62fa72ac016c4c780e939b0c88a6a08d",
+    "rows_verified": 2313,
+    "rows_inserted": 2313,
+    "rows_already_present": 0,
+    "passed": true
+  },
+  "server_checks": [
+    {
+      "name": "Dashboard acessivel com conta administrativa",
+      "passed": true
+    },
+    {
+      "name": "Conector MySQL conectado",
+      "passed": true
+    },
+    {
+      "name": "Acao MySQL conectada",
+      "passed": true
+    },
+    {
+      "name": "Regra de persistencia habilitada",
+      "passed": true
+    },
+    {
+      "name": "Autenticacao Password-Based MySQL ativa",
+      "passed": true
+    },
+    {
+      "name": "Fonte de autorizacao MySQL ativa",
+      "passed": true
+    },
+    {
+      "name": "Senha incorreta recusada",
+      "passed": true,
+      "detail": "CONNACK=134"
+    },
+    {
+      "name": "Usuario inexistente recusado",
+      "passed": true,
+      "detail": "CONNACK=135"
+    },
+    {
+      "name": "Conexao anonima recusada",
+      "passed": true,
+      "detail": "CONNACK=134"
+    },
+    {
+      "name": "Client ID diferente do cadastro recusado",
+      "passed": true,
+      "detail": "CONNACK=135"
+    },
+    {
+      "name": "Observador conecta com credenciais validas",
+      "passed": true
+    },
+    {
+      "name": "Observador pode assinar telemetria",
+      "passed": true
+    },
+    {
+      "name": "Assinatura global # bloqueada",
+      "passed": true
+    },
+    {
+      "name": "Publicador conecta com credenciais validas",
+      "passed": true
+    },
+    {
+      "name": "Publicador nao pode assinar topicos",
+      "passed": true
+    },
+    {
+      "name": "Publicacao autorizada recebe PUBACK de sucesso",
+      "passed": true
+    },
+    {
+      "name": "Observador recebe a mensagem publicada",
+      "passed": true
+    },
+    {
+      "name": "Mensagem MQTT gravada no MySQL",
+      "passed": true
+    },
+    {
+      "name": "Valores e identidade preservados",
+      "passed": true
+    },
+    {
+      "name": "Reenvio da mesma amostra nao duplica o registro",
+      "passed": true
+    },
+    {
+      "name": "Publicacao no topico de outro dispositivo bloqueada",
+      "passed": true,
+      "detail": "PUBACK=135"
+    },
+    {
+      "name": "Publicacao bloqueada nao chega ao observador",
+      "passed": true
+    },
+    {
+      "name": "Publicacao bloqueada nao e persistida",
+      "passed": true
+    },
+    {
+      "name": "Observador nao pode publicar",
+      "passed": true
+    },
+    {
+      "name": "Mensagem sem os campos obrigatorios nao e gravada",
+      "passed": true
+    },
+    {
+      "name": "MQTT 3.1.1 aceito com autenticacao",
+      "passed": true
+    },
+    {
+      "name": "MQTT 3.1.1 QoS 0 gravado no banco",
+      "passed": true
+    },
+    {
+      "name": "Nova conexao retoma a persistencia",
+      "passed": true
+    }
+  ]
+}

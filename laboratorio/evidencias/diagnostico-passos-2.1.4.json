@@ -1,0 +1,42 @@
+{
+  "status": "STATUS firmware=2.1.4 configured=1 wifi=1 mqtt=1 imu=1 sent=10 steps=0 ble=desligado",
+  "selftest": {
+    "stationary_zero": true,
+    "rotation_zero": true,
+    "invalid_zero": true,
+    "gaps_zero": true,
+    "regular_peaks": true,
+    "irregular_zero": true,
+    "double_peaks_limited": true,
+    "short_walk_variable_cadence": true,
+    "variable_cadence_steps": 8,
+    "synthetic_steps": 20,
+    "distance_formula": true,
+    "calories_formula": true,
+    "missing_profile_null": true
+  },
+  "telemetry": {
+    "firmware_version": "2.1.4",
+    "boot_id": "ebb357b1619a3a50",
+    "sessao": "ebb357b1619a3a50-1",
+    "passos": 0,
+    "wifi": "conectado",
+    "mqtt_connected": true,
+    "accel_g": [
+      -0.026903,
+      -0.041889,
+      0.995033
+    ],
+    "gyro_dps": [
+      -0.427246,
+      0.061035,
+      0.061035
+    ]
+  },
+  "firmware_sha256": "f96ecb89791251c0aa0e37c574dddf915628a2e67d3a905bedf2cf9cba462321",
+  "all_selftest_booleans_passed": true,
+  "nvs_partition_bytes_identical": false,
+  "saved_configuration_identical": true,
+  "configuration_hash": "0c4049fe74d73ee04884ed29807f24f170305f34765d00bfdefbb6272bb42b64",
+  "physical_precision_validated": false
+}

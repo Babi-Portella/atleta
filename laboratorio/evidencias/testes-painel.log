@@ -1,0 +1,24 @@
+test_arbitrary_open_port_is_not_mqtt (test_rede.NetworkTests) ... ok
+test_corrupted_device_config_does_not_replace_main_config (test_rede.NetworkTests) ... ok
+test_dashboard_requires_healthy_emqx_response (test_rede.NetworkTests) ... ok
+test_mqtt_reply_can_be_fragmented_and_refuse_credentials (test_rede.NetworkTests) ... ok
+test_online_requires_mqtt_and_emqx_dashboard (test_rede.NetworkTests) ... ok
+test_only_loopback_cannot_be_online_on_lan (test_rede.NetworkTests) ... ok
+test_powershell_single_object (test_rede.NetworkTests) ... ok
+test_prefers_real_gateway_and_excludes_unusable_ips (test_rede.NetworkTests) ... ok
+test_rejects_loopback_as_device_address (test_rede.NetworkTests) ... ok
+test_save_preserves_secrets_and_exports_only_address (test_rede.NetworkTests) ... ok
+test_cli_reinitialization_keeps_ports_chosen_by_panel (test_servidor.ServerTests) ... ok
+test_existing_engine_is_used_without_restart (test_servidor.ServerTests) ... ok
+test_first_preparation_and_network_toggle_preserve_credentials_and_ports (test_servidor.ServerTests) ... ok
+test_log_masks_generated_credentials (test_servidor.ServerTests) ... ok
+test_new_folder_cannot_replace_credentials_for_existing_volumes (test_servidor.ServerTests) ... ok
+test_partial_preparation_is_not_replaced (test_servidor.ServerTests) ... ok
+test_start_checks_health_before_reporting_success (test_servidor.ServerTests) ... ok
+test_stop_does_not_start_docker_when_engine_is_off (test_servidor.ServerTests) ... ok
+test_stop_targets_only_dedicated_services_without_removing_volumes (test_servidor.ServerTests) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 1.199s
+
+OK

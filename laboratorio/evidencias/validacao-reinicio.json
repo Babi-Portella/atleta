@@ -1,0 +1,9 @@
+{
+  "executed_at_utc": "2026-09-09T03:37:06.191791+00:00",
+  "scope": "Reinicio dos containers dedicados atleta-lab; volumes preservados",
+  "test_boot_id": "3256232ee1114ff1ba3e223f64e65eeb",
+  "rows_before": 3,
+  "rows_after": 3,
+  "passed": true,
+  "physical_device_tested": false
+}

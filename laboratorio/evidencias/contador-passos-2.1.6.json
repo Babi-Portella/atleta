@@ -1,0 +1,50 @@
+{
+  "version_candidate": "2.1.6",
+  "source_activity_sha256": "589afb36d6a3d4e8c241d8e7adeef96b2d87681b8e6802f4c69de4337b504c65",
+  "changes_since_2.1.5": [
+    "initial threshold 0.11g",
+    "1800ms maximum only after measured cadence at least 1200ms"
+  ],
+  "cpp_replay_trials": [
+    {
+      "manual_steps": 10,
+      "candidate_walk": 7,
+      "candidate_preparation_false": 0,
+      "candidate_handling_false": 0,
+      "captured_samples": 12918
+    },
+    {
+      "manual_steps": 20,
+      "short_steps": true,
+      "candidate_walk": 22,
+      "candidate_preparation_false": 0,
+      "candidate_handling_false": 0,
+      "captured_samples": 22408
+    }
+  ],
+  "native_regressions_passed": true,
+  "independent_physical_validation_pending": false,
+  "flashed_hardware_validation": {
+    "status": "STATUS firmware=2.1.6 configured=1 wifi=1 mqtt=1 imu=1 sent=26 steps=0 ble=desligado",
+    "selftest": {
+      "stationary_zero": true,
+      "rotation_zero": true,
+      "invalid_zero": true,
+      "gaps_zero": true,
+      "regular_peaks": true,
+      "irregular_zero": true,
+      "double_peaks_limited": true,
+      "short_walk_variable_cadence": true,
+      "variable_cadence_steps": 8,
+      "synthetic_steps": 20,
+      "distance_formula": true,
+      "calories_formula": true,
+      "missing_profile_null": true
+    },
+    "firmware_sha256": "1af387659ec2a58fdbaf4c5b0baa8af6cd8be4410287d2ca8372a119e5ac5b7f",
+    "all_selftest_booleans_passed": true
+  },
+  "independent_physical_test_rejected": true,
+  "independent_false_steps_on_putting_on_wrist": 9,
+  "walk_not_started_after_regression": true
+}

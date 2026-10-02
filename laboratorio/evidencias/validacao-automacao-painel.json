@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "executed_at": "2026-09-09T10:46:21.883691+00:00",
+  "scope": "Botões da janela Python com Docker Desktop, EMQX e MySQL reais locais",
+  "start_button_verified": true,
+  "stop_button_verified": true,
+  "dashboard_open_dispatched_twice": true,
+  "browser_navigation_mocked": true,
+  "mysql_rows_before": 3,
+  "mysql_rows_after": 3,
+  "payloads_preserved": true,
+  "credentials_preserved": true,
+  "services_stopped_after_test": true,
+  "configuration_restored_after_test": true,
+  "physical_m5_tested": false
+}

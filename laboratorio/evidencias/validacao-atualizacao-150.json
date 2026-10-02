@@ -1,0 +1,12 @@
+{
+  "version": "1.5.0",
+  "created_at_utc": "2026-09-12T17:16:21.995488+00:00",
+  "archive": "C:\\PROJETOS\\Atleta\\laboratorio\\entrega\\Atualizacao-Painel-1.5.0.zip",
+  "bytes": 28523015,
+  "sha256": "16e6004324f2722b0836f0f2d7bb22ec5959dad5b38d997a13a7506875ce863a",
+  "exe_sha256": "54b5e091690c5f428b7caff64387fe1a651f8b6c1b4cca821ec82f5f80bbec94",
+  "changes_only_executables": true,
+  "credentials_or_database_included": false,
+  "passed": true,
+  "publication_note": "Caminhos locais anonimizados; resultado do teste preservado."
+}

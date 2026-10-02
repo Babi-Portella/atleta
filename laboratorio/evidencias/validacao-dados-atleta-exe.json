@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "executed_at": "2026-09-10T17:29:02.037719+00:00",
+  "exe_sha256": "eee2a1a8583404648f38d848d0a65e1f204b09ad580c01a39aa00cf6c9694354",
+  "packaged_executable": true,
+  "python_removed_from_path": true,
+  "native_window_visible": true,
+  "window_responsive": true,
+  "configuration_changed": false,
+  "athlete_data_window": true
+}

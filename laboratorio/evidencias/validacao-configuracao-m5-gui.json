@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "scope": "Janela Tk real, dados fictícios, envio USB simulado",
+  "password_masked": true,
+  "decimal_comma_supported": true,
+  "saved_config_verified": true,
+  "usb_action_dispatched": true,
+  "window_responsive": true,
+  "ssid_auto_filled": true,
+  "different_network_password_cleared": true,
+  "user_edit_preserved": true
+}

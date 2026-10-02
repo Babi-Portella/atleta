@@ -1,0 +1,15 @@
+{
+  "version": "1.1.1",
+  "executed_at_utc": "2026-09-09T20:27:34Z",
+  "command": ".venv-painel/Scripts/python.exe -m unittest discover -s laboratorio/painel -p test_*.py -v",
+  "tests": 27,
+  "failures": 0,
+  "errors": 0,
+  "passed": true,
+  "windows_per_user_installation": "simulated in temporary folder",
+  "docker_desktop_launch": "mocked; no system installation changed",
+  "remote_computer_tested": false,
+  "remote_failure_cause_confirmed": false,
+  "reported_failure_stage": "Docker engine readiness queries time out before starting Compose; WSL/Desktop root cause not identified",
+  "previous_exe_sha256": "ac4361afff4129ccc0253617ed660e127b35db7c0217e01cbe358e2bcb163245"
+}

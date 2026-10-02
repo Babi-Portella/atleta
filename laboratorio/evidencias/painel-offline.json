@@ -1,0 +1,24 @@
+{
+  "ip": "192.168.0.67",
+  "state": "offline",
+  "mqtt_port": 18830,
+  "dashboard_port": 18084,
+  "lan": {
+    "host": "192.168.0.67",
+    "mqtt_port": 18830,
+    "dashboard_port": 18084,
+    "mqtt_online": false,
+    "connack": null,
+    "dashboard_online": false
+  },
+  "loopback": {
+    "host": "127.0.0.1",
+    "mqtt_port": 18830,
+    "dashboard_port": 18084,
+    "mqtt_online": false,
+    "connack": null,
+    "dashboard_online": false
+  },
+  "dashboard_url": "",
+  "checked_at": "2026-09-09T04:28:13.517869+00:00"
+}
