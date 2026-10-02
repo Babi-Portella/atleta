@@ -1,33 +1,68 @@
-# Diagrama completo — primeira versão
+# Diagrama completo — primeira versão revisada
 
 ![Arquitetura](../site/assets/diagrama-projeto-v1.svg)
 
-O caminho implementado termina no painel Windows do atleta. A GitPage é a apresentação
-estática do projeto e não acessa o banco nem o broker. A API FastAPI do código original
-está separada do laboratório; a ligação da telemetria à API ainda é uma etapa futura.
+O M5 publica pela rede local; o EMQX recebe, valida e envia a telemetria para o MySQL.
+Os dois serviços rodam em containers Docker no computador servidor. O painel do atleta,
+o navegador de administração e o programa de configuração USB rodam no Windows,
+fora dos containers. Um único MySQL contém as tabelas `mqtt_users`, `mqtt_acl` e `telemetry`.
+
+A GitPage é a apresentação estática do projeto, com documentação e downloads.
+A API FastAPI do código original está separada do laboratório; sua ligação à telemetria
+ainda é uma etapa futura. O cliente BLE, o aplicativo móvel e os sensores externos
+também ficam identificados como expansões ou integrações pendentes.
 
 ```mermaid
 flowchart LR
   subgraph PLACA[Dispositivo M5StickC Plus2]
-    IMU[MPU6886 interno: aceleração e rotação] --> FW[Firmware Arduino C++ 2.1.7]
-    BAT[Bateria interna e botões] --> FW
-    FW --> LCD[Tela: sessão e sensores]
-    NVS[Configuração Wi-Fi, MQTT e perfil em NVS] --> FW
+    IMU[MPU6886: aceleração e rotação] -->|I²C / leitura a 50 Hz| FW[Firmware Arduino C++ 2.1.7]
+    BAT[Botões e leitura da bateria] -->|GPIO / ADC| FW
+    FW -->|SPI e controle| LCD[Tela: passos, sessão e sensores]
+    NVS[Wi-Fi, MQTT e perfil em NVS] --> FW
+    USB[USB-C / UART0] -->|Configuração| NVS
+    USB -->|Gravação do firmware| FW
   end
-  USB[PC: configuração e gravação por USB] --> NVS
-  FW -->|Wi-Fi 2,4 GHz / MQTT 3.1.1 / QoS 0 / JSON a cada 2 s| EMQX
-  subgraph SERVIDOR[Plataforma própria: Docker no servidor]
-    EMQX[EMQX 6.1.1] --> RULE[Regra de telemetria e ação MySQL]
-    RULE --> DB[(MySQL 8.4.8: athlete_lab.telemetry)]
-    EMQX <-->|Login bcrypt e ACL por usuário/tópico| AUTH[(mqtt_users e mqtt_acl)]
-    DB -->|Consulta com usuário lab_reader| PANEL[Painel Windows: dados do atleta]
+  FW -->|Wi-Fi 2,4 GHz / MQTT 3.1.1 / QoS 0 / JSON a cada 2 s| LAN[Roteador / rede local]
+  LAN -->|Rede cabeada / MQTT TCP 1883| EMQX
+  subgraph SERVIDOR[Computador Windows / plataforma própria]
+    subgraph DOCKER[Docker: dois containers]
+      subgraph BROKER[Container EMQX]
+        EMQX[Broker EMQX 6.1.1] --> RULE[Regra de validação e ação MySQL]
+        DASH[Dashboard EMQX]
+      end
+      DB[(MySQL 8.4.8 / athlete_lab<br/>mqtt_users / mqtt_acl / telemetry)]
+      EMQX <-->|SQL mysql:3306 / login bcrypt e ACL| DB
+      RULE -->|SQL mysql:3306 / INSERT telemetry| DB
+    end
+    subgraph WINDOWS[Programas no Windows]
+      PANEL[Painel do atleta: leituras e histórico]
+      BROWSER[Navegador de administração]
+      CONFIG[Programa de configuração e gravação do M5]
+    end
+    PANEL <-->|SQL local 127.0.0.1:33070 / lab_reader| DB
+    BROWSER <-->|HTTP 18083| DASH
   end
-  EMQX --> DASH[Dashboard EMQX: administração]
-  FW -.->|BLE opcional: cliente remoto pendente| BLE[Aplicativo BLE futuro]
-  EXT[BPM / temperatura da pele / GNSS: hardware pendente] -.-> FW
-  DB -.->|Integração ainda não implementada| API[API FastAPI original]
-  PAGE[GitHub Pages: apresentação e downloads]
+  CONFIG <-->|USB / serial| USB
+  subgraph PUBLICO[Apresentação pública]
+    REPO[Repositório GitHub: fontes e documentação] -->|Publicação| PAGE[GitHub Pages: apresentação e downloads]
+    PAGE <-->|HTTPS| VISITOR[Equipe / visitante]
+  end
+  subgraph FUTURO[Expansões e integrações pendentes]
+    BLE[Cliente BLE: resumo opcional no M5, aplicativo remoto pendente]
+    EXT[Sensores externos: BPM / SpO₂ / pele / GNSS]
+    API[API FastAPI original: ligação à telemetria pendente]
+    MOBILE[Aplicativo móvel: etapa futura]
+  end
+  FW -.->|Cliente remoto pendente| BLE
+  EXT -.->|Hardware e ligações a definir| FW
+  DB -.->|Integração pendente| API
+  API -.->|Integração pendente| MOBILE
 ```
+
+Na imagem, setas verdes representam o fluxo de dados implementado e setas lilás
+representam configuração ou administração. As caixas tracejadas mostram etapas futuras.
+A publicação MQTT indicada corresponde ao modo normal; a captura diagnóstica de IMU
+usa mensagens adicionais quando ativada.
 
 ## Contrato de dados
 
