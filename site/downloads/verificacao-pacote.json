@@ -1,0 +1,26 @@
+{
+  "created_at_utc": "2026-10-02T18:17:31.781566+00:00",
+  "passed": true,
+  "firmware_version": "2.1.7",
+  "firmware_sources_and_images_match_manifest": true,
+  "firmware_physical_device_tested_per_original_manifest": false,
+  "panel_image_matches_manifest": true,
+  "python_files_syntax_checked": 38,
+  "local_links_checked": 27,
+  "known_credentials_absent": true,
+  "hardware_or_live_server_tested_this_run": false,
+  "downloads": [
+    {
+      "file": "firmware-plataforma-v1.zip",
+      "bytes": 16994916,
+      "sha256": "f113041565a9607cad12aaa9b05c7728fdadede393af42b8a2e5d24a0673aeb5",
+      "files": 113
+    },
+    {
+      "file": "documentacao-v1.zip",
+      "bytes": 2269053,
+      "sha256": "632394eea3f016e235b60be45427a3f46a519977bc19b7fbf54bfa488bc173d7",
+      "files": 10
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "checked_at_utc": "2026-10-02T18:07:19.592Z",
+  "browser": "Chrome externo via Cua",
+  "scope": "Página N1 atualizada, revisão local antes da publicação",
+  "navigation": [
+    "Home",
+    "Plataforma",
+    "Dispositivos",
+    "Aplicativo"
+  ],
+  "team": [
+    "Babi-Portella",
+    "Emilio467",
+    "jvBaracho"
+  ],
+  "viewportResults": [
+    {
+      "viewport": "Chrome padrão",
+      "clientWidth": 1905,
+      "scrollWidth": 1905,
+      "horizontalOverflow": false
+    },
+    {
+      "viewportOverride": 390,
+      "clientWidth": 375,
+      "scrollWidth": 375,
+      "horizontalOverflow": false
+    }
+  ],
+  "application_image": {
+    "loaded": true,
+    "width": 946,
+    "height": 789
+  },
+  "banner_and_architecture_loaded": true,
+  "console_errors": [],
+  "download_integrity": "Validada pelo empacotador; ver verificacao-pacote.json",
+  "hardware_tested_this_browser_run": false,
+  "published_url_verified_this_run": false
+}
