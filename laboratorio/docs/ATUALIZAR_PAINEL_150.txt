@@ -1,0 +1,39 @@
+ATUALIZAÇÃO DO PAINEL PARA 1.5.0
+
+NO COMPUTADOR EM QUE VOCÊ JÁ EXTRAÍU O PACOTE DE MIGRAÇÃO:
+1. Feche as janelas do painel e de configuração do M5.
+   Fechar o painel mantém EMQX/MySQL em execução.
+2. Extraia Atualizacao-Painel-1.5.0.zip DENTRO da pasta "Atleta - outro PC",
+   a mesma que contém ABRIR PAINEL.exe e a subpasta laboratorio.
+3. Aceite substituir os dois executáveis. O ZIP não contém banco, histórico,
+   senhas ou configurações; esses arquivos existentes serão preservados.
+   Não extraia a atualização como outra instalação independente.
+4. Abra ABRIR PAINEL.exe. Confira v1.5.0 no rodapé.
+5. Mantenha Permitir conexão do M5 pela rede marcado e clique em Iniciar laboratório.
+6. Conecte o M5 por USB e abra Configurar Wi-Fi e perfil do M5 por USB.
+   O nome do Wi-Fi ativo do PC será preenchido automaticamente.
+   Se a rede for a mesma salva no projeto, a senha será mantida.
+   Se for outra rede, preencha a senha. O M5 precisa de Wi-Fi de 2,4 GHz.
+7. Clique em Enviar ao M5 por USB e aguarde a conferência, aproximadamente 40 s.
+   A mensagem diferencia falha de Wi-Fi, conexão ao servidor e gravação MySQL.
+   Sucesso: "Conexão confirmada: M5 no Wi-Fi, leitura nova gravada no MySQL."
+
+SE O PC USA APENAS CABO
+O programa identifica o IP do PC, mas não pode inferir o nome do Wi-Fi do roteador
+a partir do cabo. Informe manualmente o nome e a senha da rede que o M5 deve usar.
+
+SE A CONSULTA DO WINDOWS FOR NEGADA
+O formulário continua manual. Confira permissões de localização do Windows
+se quiser habilitar a consulta; nenhuma configuração do Windows é alterada
+automaticamente pelo painel e nenhuma senha é extraída dos perfis do Windows.
+
+SE AINDA NÃO HOUVER DADOS AO VIVO
+Copie a mensagem final da configuração e o trecho "Diagnóstico do M5" em
+Ver detalhes. O mesmo resultado fica em laboratorio/runtime/diagnostico-conexao-m5.json.
+O diagnóstico não inclui senhas. Não é necessário enviar config.local.json
+nem runtime/secrets.json. O erro do outro PC ainda precisa dessa evidência.
+
+ESCOPO
+Atualização verificada neste PC com testes automatizados e janela Tk real.
+A conexão Wi-Fi e a placa do outro computador precisam ser confirmadas lá.
+O firmware do M5, o histórico e os parâmetros do atleta não são substituídos.

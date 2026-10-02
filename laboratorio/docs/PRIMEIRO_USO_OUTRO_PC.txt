@@ -1,0 +1,18 @@
+ATLETA — PRIMEIRO USO EM OUTRO PC
+Painel Windows 1.5.0 / firmware M5 2.1.7
+
+1. Extraia o pacote completo. Não abra o executável dentro do ZIP.
+2. Instale e inicie Docker Desktop para Windows x64, usando containers Linux.
+3. Abra ABRIR PAINEL.exe; o executável dispensa instalação de Python.
+4. Marque Permitir conexão do M5 pela rede e inicie o laboratório.
+   O primeiro início requer internet para baixar EMQX e MySQL.
+5. Conecte o M5 por USB. Abra Configurar Wi-Fi e perfil do M5 por USB.
+   Informe a rede de 2,4 GHz e a senha. Preencha o perfil se desejar.
+   Envie ao M5 para aplicar o endereço do novo PC e suas credenciais.
+6. Aguarde Conexão confirmada, retire o cabo e abra Ver dados do atleta.
+   Confirme o aviso Recebendo dados e horários das leituras avançando.
+
+Este pacote público cria um banco novo com novas senhas. Configuração privada,
+histórico local, backups, Docker e imagens Docker não acompanham esta cópia.
+O M5 dos testes já tem o firmware 2.1.7; mudar de PC requer reconfiguração por USB.
+Para compilar e gravar, consulte README.md e laboratorio/docs/FIRMWARE_M5.md.
