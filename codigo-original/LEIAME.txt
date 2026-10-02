@@ -1,0 +1,1 @@
+API HTTP original preservada como referência. O laboratório atual usa M5, EMQX, MySQL e o painel; esta API não é iniciada pelo painel. Ambientes Python e credenciais da API antiga não são copiados.
