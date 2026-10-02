@@ -46,50 +46,159 @@ class Drawing:
 
 
 def architecture():
-    s = Drawing(1440, 940, True, "ATLETA — arquitetura completa da primeira versão")
-    s.text(50, 57, "ATLETA / ARQUITETURA DO PROJETO", 30, weight=700)
-    s.text(50, 91, "Sensores → firmware → MQTT → EMQX → MySQL → painel", 20, s.muted)
-    s.rect(50, 130, 350, 585, fill="#0a2237", stroke="#2c4b60")
-    s.rect(440, 130, 300, 585, fill="#0a2237", stroke="#2c4b60")
-    s.rect(780, 130, 610, 585, fill="#0a2237", stroke="#2c4b60")
-    for x, a, b in [(70,"01 / DISPOSITIVO","M5StickC Plus2"),(460,"02 / COMUNICAÇÃO","Rede do laboratório"),(800,"03 / PLATAFORMA PRÓPRIA","Docker no computador servidor")]:
-        s.text(x, 159, a, 16, "#c4f545", 700)
-        s.text(x, 186, b, 17, s.muted)
-    s.box(70, 212, 310, 94, "MPU6886 interno", ["Aceleração + rotação / 50 Hz"], color="#21a5b0")
-    s.box(70, 339, 310, 125, "Firmware 2.1.7", ["Arduino C++ / sessão / passos", "JSON com source=device"], color="#c4f545")
-    s.box(70, 498, 310, 84, "Configuração em NVS", ["Wi-Fi / MQTT / perfil por USB"])
-    s.box(70, 615, 310, 80, "Tela, botões e bateria", ["Operação local da sessão"])
-    s.path('M225 306 V339', True, color="#21a5b0")
-    s.path('M225 498 V464', True, color="#21a5b0")
-    s.path('M90 464 V598 H225 V615', True, color="#21a5b0")
-    s.box(460, 339, 260, 125, "Wi-Fi 2,4 GHz", ["MQTT 3.1.1 / TCP / QoS 0", "Publicação a cada 2 segundos"], color="#21a5b0")
-    s.box(460, 503, 260, 155, "Tópico de telemetria", ["atletas/m5-atleta-01/", "telemetria", "Sem fila persistente offline"])
-    s.text(460, 258, "Host e porta configuráveis", 18, s.muted)
-    s.text(460, 285, "IP do servidor alcançável pelo M5", 16, s.muted)
-    s.path('M380 400 H460', True, color="#21a5b0")
-    s.box(800, 236, 265, 108, "Broker EMQX 6.1.1", ["Recebe e identifica o cliente", "MQTT 1883 no perfil servidor"], color="#21a5b0")
-    s.box(1110, 236, 260, 108, "MySQL / acesso", ["mqtt_users: login bcrypt", "mqtt_acl: permissão por tópico"])
-    s.path('M1065 284 H1110', True, color="#21a5b0")
-    s.path('M1110 315 H1065', True, color="#21a5b0")
-    s.path('M720 400 H755 V290 H800', True, color="#21a5b0")
-    s.box(800, 402, 265, 108, "Regra + ação MySQL", ["Valida campos obrigatórios", "Conector mysql:3306"])
-    s.box(1110, 402, 260, 108, "MySQL 8.4.8", ["athlete_lab.telemetry", "JSON + identidade + horário"], color="#c4f545")
-    s.path('M932 344 V402', True, color="#21a5b0")
-    s.path('M1065 456 H1110', True, color="#21a5b0")
-    s.box(800, 573, 265, 100, "Dashboard EMQX", ["Administração do broker", "Porta 18083 no perfil servidor"])
-    s.box(1110, 573, 260, 100, "Painel do atleta", ["Windows: leituras e histórico", "Consulta com lab_reader"])
-    s.path('M1240 510 V573', True, color="#21a5b0")
-    s.path('M800 300 H791 V551 H933 V573', True, color="#21a5b0", width=2)
-    s.text(50, 765, "EXPANSÕES E OUTROS ARTEFATOS", 17, "#c4f545", 700)
-    s.box(50, 791, 350, 101, "Sensores externos", ["BPM / pele / GNSS: pendentes", "Modelos e ligações a confirmar"], True)
-    s.box(440, 791, 300, 101, "Bluetooth BLE", ["Resumo opcional no M5", "Cliente remoto ainda pendente"], True)
-    s.box(780, 791, 290, 101, "API FastAPI original", ["Integração com a telemetria", "ainda não implementada"], True)
-    s.box(1110, 791, 280, 101, "GitHub Pages", ["Apresentação estática", "Documentação e downloads"])
-    s.path('M225 791 V745 H420 V360 H380', True, True, "#688494", 2)
-    s.path('M380 430 H410 V735 H590 V791', True, True, "#688494", 2)
-    s.path('M1370 470 H1380 V743 H925 V791', True, True, "#688494", 2)
-    s.text(50, 925, "Contínuo: caminho implementado   /   Tracejado: expansão ou integração pendente   /   Portas de uma instalação nova em perfil server", 16, s.muted)
-    s.save("diagrama-projeto-v1.svg")
+    W, H = 1800, 1420
+    BG, PANEL, INK, MUTED = "#061a2f", "#102a40", "#eff7fb", "#b0c6d4"
+    TEAL, LIME, VIOLET, BORDER = "#21a5b0", "#c4f545", "#bca1f5", "#36586c"
+    parts = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-labelledby="title desc">',
+             '<title id="title">ATLETA — arquitetura revisada para a N1</title>',
+             '<desc id="desc">M5 e roteador conectados à plataforma local. EMQX e um único MySQL ficam no Docker; painel e configuração USB ficam no Windows. GitHub Pages e expansões aparecem em áreas próprias.</desc>',
+             '<defs>']
+    for name, color in (("data", TEAL), ("control", VIOLET)):
+        parts.append(f'<marker id="{name}" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8" fill="{color}"/></marker>')
+    parts += ['</defs>', f'<rect width="{W}" height="{H}" fill="{BG}"/>']
+
+
+    def text(x, y, value, size=18, color=INK, weight=400, anchor="start"):
+        parts.append(f'<text x="{x}" y="{y}" fill="{color}" font-family="Segoe UI,Arial,sans-serif" font-size="{size}" font-weight="{weight}" text-anchor="{anchor}">{escape(value)}</text>')
+
+
+    def rect(x, y, w, h, fill=PANEL, stroke=BORDER, dashed=False, radius=10):
+        dash = ' stroke-dasharray="7 6"' if dashed else ""
+        parts.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{radius}" fill="{fill}" stroke="{stroke}" stroke-width="1.5"{dash}/>')
+
+
+    def box(x, y, w, h, title, lines=(), color=BORDER, size=21, line_size=17, dashed=False):
+        rect(x, y, w, h, stroke=color, dashed=dashed)
+        text(x+18, y+32, title, size, weight=650)
+        for i, value in enumerate(lines):
+            text(x+18, y+61+i*24, value, line_size, MUTED)
+
+
+    def path(d, control=False, both=False):
+        kind, color = ("control", VIOLET) if control else ("data", TEAL)
+        start = f' marker-start="url(#{kind})"' if both else ""
+        parts.append(f'<path d="{d}" fill="none" stroke="{color}" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#{kind})"{start}/>')
+
+
+    def section(x, y, label, title):
+        text(x, y, label, 16, LIME, 700)
+        text(x, y+29, title, 23, weight=650)
+
+
+    # Título e limites físicos de execução.
+    text(40, 58, "ATLETA / ARQUITETURA DO PROJETO", 32, weight=700)
+    text(40, 95, "Do movimento no pulso à leitura no computador — componentes e conexões da primeira versão", 21, MUTED)
+    rect(1470, 32, 290, 43, fill="#183322", stroke=LIME)
+    text(1615, 60, "ARQUITETURA REVISADA / N1", 17, LIME, 650, "middle")
+    for x, width in ((40, 440), (510, 250), (790, 970)):
+        rect(x, 140, width, 800, fill="#0a2237", stroke=BORDER)
+    section(62, 174, "01 / DISPOSITIVO", "M5StickC Plus2")
+    section(530, 174, "02 / REDE LOCAL", "Roteador / LAN")
+    section(812, 174, "03 / PLATAFORMA PRÓPRIA", "Computador Windows / servidor local")
+
+    # Entradas, processamento e saída local do M5.
+    box(62, 250, 196, 112, "MPU6886", ["Aceleração + rotação", "Leitura a 50 Hz"], TEAL, size=21, line_size=16)
+    box(278, 250, 180, 112, "Botões + bateria", ["Comandos da sessão", "Leitura da bateria"], size=18, line_size=15)
+    box(62, 420, 396, 130, "Firmware Arduino C++ / 2.1.7", ["Detector de passos + sessão", "Telemetria JSON / source=device", "Wi-Fi e MQTT configuráveis"], LIME)
+    path("M160 362 V420")
+    path("M368 362 V420")
+    text(160, 394, "I²C", 16, TEAL, anchor="middle")
+    text(368, 394, "GPIO / ADC", 15, TEAL, anchor="middle")
+    box(62, 630, 196, 112, "Configuração NVS", ["Wi-Fi / MQTT / perfil", "Persistência na placa"], size=18, line_size=16)
+    box(278, 630, 180, 112, "Tela LCD", ["Passos e sessão", "Dados dos sensores"], size=21, line_size=16)
+    path("M160 630 V550", control=True)
+    path("M368 550 V630")
+    text(160, 599, "Configuração", 15, VIOLET, anchor="middle")
+    text(368, 599, "SPI / controle", 15, TEAL, anchor="middle")
+    box(62, 820, 396, 92, "USB-C / UART0", ["Configuração → NVS  •  Gravação → ESP32"], VIOLET, line_size=16)
+    path("M160 820 V742", control=True)
+    path("M62 866 H51 V515 H62", control=True)
+
+    # MQTT atravessa a rede; o roteador não é um broker.
+    text(635, 291, "M5 pelo Wi-Fi 2,4 GHz", 17, MUTED, anchor="middle")
+    text(635, 318, "PC pela rede Ethernet", 17, MUTED, anchor="middle")
+    text(635, 359, "MQTT 3.1.1 / TCP", 18, TEAL, 650, "middle")
+    text(635, 385, "1883 no perfil servidor", 16, MUTED, anchor="middle")
+    box(530, 420, 210, 130, "Roteador / AP", ["Conecta M5 e servidor", "Wi-Fi + rede cabeada", "Encaminha o tráfego"], TEAL, size=21, line_size=16)
+    path("M458 484 H530")
+    path("M740 484 H845")
+    text(494, 470, "Wi-Fi", 14, TEAL, anchor="middle")
+    text(792, 470, "LAN", 14, TEAL, anchor="middle")
+    rect(530, 592, 210, 179)
+    text(548, 623, "TÓPICO MQTT", 15, LIME, 650)
+    text(548, 653, "atletas/m5-atleta-01/", 15, MUTED)
+    text(548, 676, "telemetria", 15, MUTED)
+    text(548, 712, "JSON a cada 2 segundos", 16, INK)
+    text(548, 742, "QoS 0 / sem fila offline", 15, MUTED)
+
+    # Só os dois serviços do compose são containers Docker.
+    rect(810, 238, 650, 472, fill="#082032", stroke=TEAL)
+    text(830, 265, "DOCKER / DOIS CONTAINERS", 16, TEAL, 700)
+    rect(830, 300, 260, 380, fill="#0c2438", stroke=BORDER)
+    rect(1220, 300, 220, 380, fill="#0c2438", stroke=BORDER)
+    text(848, 329, "CONTAINER EMQX", 16, MUTED, 650)
+    text(1238, 329, "MYSQL 8.4.8", 18, MUTED, 650)
+    rect(845, 354, 228, 49, stroke=VIOLET)
+    text(959, 385, "Dashboard / HTTP 18083", 17, INK, 500, "middle")
+    box(845, 420, 228, 130, "EMQX 6.1.1", ["Broker MQTT", "Cliente autenticado", "Permissões por tópico"], TEAL, line_size=16)
+    box(845, 589, 228, 73, "Regra + ação SQL", ["Valida e grava a telemetria"], size=20, line_size=15)
+    path("M959 550 V589")
+
+    # Um único banco contém as três tabelas; a forma de cilindro evita duplicidade.
+    parts.append('<path d="M1236 408 C1236 376 1424 376 1424 408 V630 C1424 662 1236 662 1236 630 Z" fill="#163747" stroke="#c4f545" stroke-width="1.5"/>')
+    parts.append('<ellipse cx="1330" cy="408" rx="94" ry="23" fill="#214957" stroke="#c4f545" stroke-width="1.5"/>')
+    text(1330, 414, "athlete_lab", 20, INK, 650, "middle")
+    text(1330, 471, "mqtt_users", 18, INK, 650, "middle")
+    text(1330, 496, "Login / bcrypt", 15, MUTED, anchor="middle")
+    text(1330, 533, "mqtt_acl", 18, INK, 650, "middle")
+    text(1330, 558, "Permissões / tópicos", 15, MUTED, anchor="middle")
+    text(1330, 594, "telemetry", 18, LIME, 650, "middle")
+    text(1330, 619, "JSON + identidade", 15, MUTED, anchor="middle")
+    text(1330, 642, "Hora da recepção", 15, MUTED, anchor="middle")
+    path("M1073 489 H1236", both=True)
+    text(1154, 464, "Login / ACL", 16, TEAL, anchor="middle")
+    text(1154, 517, "SQL / 3306", 15, MUTED, anchor="middle")
+    path("M1073 626 H1236")
+    text(1154, 601, "INSERT telemetry", 15, TEAL, anchor="middle")
+    text(830, 701, "MySQL acessível pelo nome mysql:3306 entre os containers", 16, MUTED)
+
+    # Programas nativos: leitura SQL, administração HTTP e configuração USB.
+    text(1490, 265, "PROGRAMAS NO WINDOWS", 16, LIME, 700)
+    box(1490, 300, 250, 90, "Navegador", ["Administração do EMQX", "Dashboard / HTTP 18083"], VIOLET, line_size=16)
+    path("M1490 349 H1475 V280 H816 V378 H845", control=True, both=True)
+    box(1490, 420, 250, 130, "Painel do atleta", ["Programa Windows", "Leituras e histórico", "Consulta com lab_reader"], LIME, line_size=16)
+    path("M1330 653 V752 H1615 V550", both=True)
+    text(1480, 786, "SQL local / 127.0.0.1:33070 / lab_reader", 16, TEAL, anchor="middle")
+    box(1490, 820, 250, 92, "Configurar / gravar M5", ["Programa Windows / USB", "Wi-Fi, MQTT e firmware"], VIOLET, size=19, line_size=16)
+    path("M1490 866 H458", control=True, both=True)
+    text(970, 847, "USB / serial — configuração e gravação", 17, VIOLET, anchor="middle")
+
+    # Material público é uma entrega separada da plataforma de telemetria.
+    text(40, 984, "04 / APRESENTAÇÃO PÚBLICA", 16, LIME, 700)
+    box(40, 1017, 430, 111, "Repositório GitHub", ["Fontes, documentação e diagramas", "Projeto da equipe"], line_size=18)
+    box(610, 1017, 520, 111, "GitHub Pages", ["Home • Plataforma • Dispositivos • Aplicativo", "Apresentação estática e downloads"], TEAL, line_size=18)
+    box(1280, 1017, 480, 111, "Equipe / visitante", ["Consulta a página do projeto", "Baixa código, diagramas e materiais"], line_size=18)
+    path("M470 1075 H610")
+    path("M1130 1075 H1280", both=True)
+    text(540, 1055, "Publicação", 16, TEAL, anchor="middle")
+    text(1205, 1055, "HTTPS", 16, TEAL, anchor="middle")
+    text(40, 1162, "A GitPage apresenta o projeto; as leituras do M5 ficam na plataforma local.", 19, MUTED)
+
+    # Planejamento, sem sugerir que os recursos já recebem telemetria.
+    text(40, 1210, "05 / EXPANSÕES E INTEGRAÇÕES PENDENTES", 16, MUTED, 700)
+    box(40, 1240, 405, 110, "Sensores externos", ["BPM / SpO₂ / pele / GNSS", "Modelos e ligações a definir"], dashed=True)
+    box(478, 1240, 406, 110, "Cliente BLE", ["Resumo opcional já existe no M5", "Aplicativo remoto pendente"], dashed=True)
+    box(917, 1240, 405, 110, "Integração FastAPI", ["Código original disponível", "Ligação à telemetria pendente"], dashed=True)
+    box(1355, 1240, 405, 110, "Aplicativo móvel", ["Interface e integração", "Etapa futura do sistema"], dashed=True)
+    parts.append(f'<path d="M40 1390 H82" stroke="{TEAL}" stroke-width="3"/>')
+    text(95, 1396, "Dados implementados", 16, MUTED)
+    parts.append(f'<path d="M335 1390 H377" stroke="{VIOLET}" stroke-width="3"/>')
+    text(390, 1396, "Configuração / administração", 16, MUTED)
+    text(760, 1396, "Tracejado: etapa futura • Portas indicadas: perfil servidor novo • Firmware atual: 2.1.7", 16, MUTED)
+    parts.append('</svg>')
+
+    OUT.mkdir(parents=True, exist_ok=True)
+    (OUT / "diagrama-projeto-v1.svg").write_text("\n".join(parts)+"\n", encoding="utf-8")
 
 
 def circuit():
