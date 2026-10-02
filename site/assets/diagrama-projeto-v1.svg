@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 940" role="img" aria-labelledby="title desc">
+<title id="title">ATLETA — arquitetura completa da primeira versão</title><desc id="desc">Diagrama do projeto ATLETA, primeira entrega N1, atualizado em outubro de 2026.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8" fill="#21a5b0"/></marker></defs>
+<rect width="1440" height="940" fill="#061a2f"/>
+<text x="50" y="57" fill="#eff7fb" font-family="Segoe UI,Arial,sans-serif" font-size="30" font-weight="700" text-anchor="start">ATLETA / ARQUITETURA DO PROJETO</text>
+<text x="50" y="91" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="400" text-anchor="start">Sensores → firmware → MQTT → EMQX → MySQL → painel</text>
+<rect x="50" y="130" width="350" height="585" rx="8" fill="#0a2237" stroke="#2c4b60" stroke-width="1.5" />
+<rect x="440" y="130" width="300" height="585" rx="8" fill="#0a2237" stroke="#2c4b60" stroke-width="1.5" />
+<rect x="780" y="130" width="610" height="585" rx="8" fill="#0a2237" stroke="#2c4b60" stroke-width="1.5" />
+<text x="70" y="159" fill="#c4f545" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="700" text-anchor="start">01 / DISPOSITIVO</text>
+<text x="70" y="186" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">M5StickC Plus2</text>
+<text x="460" y="159" fill="#c4f545" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="700" text-anchor="start">02 / COMUNICAÇÃO</text>
+<text x="460" y="186" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Rede do laboratório</text>
+<text x="800" y="159" fill="#c4f545" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="700" text-anchor="start">03 / PLATAFORMA PRÓPRIA</text>
+<text x="800" y="186" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Docker no computador servidor</text>
+<rect x="70" y="212" width="310" height="94" rx="8" fill="#102a40" stroke="#21a5b0" stroke-width="1.5" />
+<text x="90" y="244" fill="#eff7fb" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">MPU6886 interno</text>
+<text x="90" y="273" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Aceleração + rotação / 50 Hz</text>
+<rect x="70" y="339" width="310" height="125" rx="8" fill="#102a40" stroke="#c4f545" stroke-width="1.5" />
+<text x="90" y="371" fill="#eff7fb" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Firmware 2.1.7</text>
+<text x="90" y="400" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Arduino C++ / sessão / passos</text>
+<text x="90" y="424" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">JSON com source=device</text>
+<rect x="70" y="498" width="310" height="84" rx="8" fill="#102a40" stroke="#688494" stroke-width="1.5" />
+<text x="90" y="530" fill="#eff7fb" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Configuração em NVS</text>
+<text x="90" y="559" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Wi-Fi / MQTT / perfil por USB</text>
+<rect x="70" y="615" width="310" height="80" rx="8" fill="#102a40" stroke="#688494" stroke-width="1.5" />
+<text x="90" y="647" fill="#eff7fb" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Tela, botões e bateria</text>
+<text x="90" y="676" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Operação local da sessão</text>
+<path d="M225 306 V339" fill="none" stroke="#21a5b0" stroke-width="2.5" marker-end="url(#arrow)" />
+<path d="M225 498 V464" fill="none" stroke="#21a5b0" stroke-width="2.5" marker-end="url(#arrow)" />
+<path d="M90 464 V598 H225 V615" fill="none" stroke="#21a5b0" stroke-width="2.5" marker-end="url(#arrow)" />
+<rect x="460" y="339" width="260" height="125" rx="8" fill="#102a40" stroke="#21a5b0" stroke-width="1.5" />
+<text x="480" y="371" fill="#eff7fb" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Wi-Fi 2,4 GHz</text>
+<text x="480" y="400" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">MQTT 3.1.1 / TCP / QoS 0</text>
+<text x="480" y="424" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Publicação a cada 2 segundos</text>
+<rect x="460" y="503" width="260" height="155" rx="8" fill="#102a40" stroke="#688494" stroke-width="1.5" />
+<text x="480" y="535" fill="#eff7fb" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Tópico de telemetria</text>
+<text x="480" y="564" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">atletas/m5-atleta-01/</text>
+<text x="480" y="588" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">telemetria</text>
+<text x="480" y="612" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Sem fila persistente offline</text>
+<text x="460" y="258" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Host e porta configuráveis</text>
+<text x="460" y="285" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">IP do servidor alcançável pelo M5</text>
+<path d="M380 400 H460" fill="none" stroke="#21a5b0" stroke-width="2.5" marker-end="url(#arrow)" />
+<rect x="800" y="236" width="265" height="108" rx="8" fill="#102a40" stroke="#21a5b0" stroke-width="1.5" />
+<text x="820" y="268" fill="#eff7fb" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Broker EMQX 6.1.1</text>
+<text x="820" y="297" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Recebe e identifica o cliente</text>
+<text x="820" y="321" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">MQTT 1883 no perfil servidor</text>
+<rect x="1110" y="236" width="260" height="108" rx="8" fill="#102a40" stroke="#688494" stroke-width="1.5" />
+<text x="1130" y="268" fill="#eff7fb" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">MySQL / acesso</text>
+<text x="1130" y="297" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">mqtt_users: login bcrypt</text>
+<text x="1130" y="321" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">mqtt_acl: permissão por tópico</text>
+<path d="M1065 284 H1110" fill="none" stroke="#21a5b0" stroke-width="2.5" marker-end="url(#arrow)" />
+<path d="M1110 315 H1065" fill="none" stroke="#21a5b0" stroke-width="2.5" marker-end="url(#arrow)" />
+<path d="M720 400 H755 V290 H800" fill="none" stroke="#21a5b0" stroke-width="2.5" marker-end="url(#arrow)" />
+<rect x="800" y="402" width="265" height="108" rx="8" fill="#102a40" stroke="#688494" stroke-width="1.5" />
+<text x="820" y="434" fill="#eff7fb" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Regra + ação MySQL</text>
+<text x="820" y="463" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Valida campos obrigatórios</text>
+<text x="820" y="487" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Conector mysql:3306</text>
+<rect x="1110" y="402" width="260" height="108" rx="8" fill="#102a40" stroke="#c4f545" stroke-width="1.5" />
+<text x="1130" y="434" fill="#eff7fb" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">MySQL 8.4.8</text>
+<text x="1130" y="463" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">athlete_lab.telemetry</text>
+<text x="1130" y="487" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">JSON + identidade + horário</text>
+<path d="M932 344 V402" fill="none" stroke="#21a5b0" stroke-width="2.5" marker-end="url(#arrow)" />
+<path d="M1065 456 H1110" fill="none" stroke="#21a5b0" stroke-width="2.5" marker-end="url(#arrow)" />
+<rect x="800" y="573" width="265" height="100" rx="8" fill="#102a40" stroke="#688494" stroke-width="1.5" />
+<text x="820" y="605" fill="#eff7fb" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Dashboard EMQX</text>
+<text x="820" y="634" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Administração do broker</text>
+<text x="820" y="658" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Porta 18083 no perfil servidor</text>
+<rect x="1110" y="573" width="260" height="100" rx="8" fill="#102a40" stroke="#688494" stroke-width="1.5" />
+<text x="1130" y="605" fill="#eff7fb" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Painel do atleta</text>
+<text x="1130" y="634" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Windows: leituras e histórico</text>
+<text x="1130" y="658" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Consulta com lab_reader</text>
+<path d="M1240 510 V573" fill="none" stroke="#21a5b0" stroke-width="2.5" marker-end="url(#arrow)" />
+<path d="M800 300 H791 V551 H933 V573" fill="none" stroke="#21a5b0" stroke-width="2" marker-end="url(#arrow)" />
+<text x="50" y="765" fill="#c4f545" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="700" text-anchor="start">EXPANSÕES E OUTROS ARTEFATOS</text>
+<rect x="50" y="791" width="350" height="101" rx="8" fill="#102a40" stroke="#688494" stroke-width="1.5" stroke-dasharray="7 6"/>
+<text x="70" y="823" fill="#eff7fb" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Sensores externos</text>
+<text x="70" y="852" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">BPM / pele / GNSS: pendentes</text>
+<text x="70" y="876" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Modelos e ligações a confirmar</text>
+<rect x="440" y="791" width="300" height="101" rx="8" fill="#102a40" stroke="#688494" stroke-width="1.5" stroke-dasharray="7 6"/>
+<text x="460" y="823" fill="#eff7fb" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Bluetooth BLE</text>
+<text x="460" y="852" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Resumo opcional no M5</text>
+<text x="460" y="876" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Cliente remoto ainda pendente</text>
+<rect x="780" y="791" width="290" height="101" rx="8" fill="#102a40" stroke="#688494" stroke-width="1.5" stroke-dasharray="7 6"/>
+<text x="800" y="823" fill="#eff7fb" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">API FastAPI original</text>
+<text x="800" y="852" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Integração com a telemetria</text>
+<text x="800" y="876" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">ainda não implementada</text>
+<rect x="1110" y="791" width="280" height="101" rx="8" fill="#102a40" stroke="#688494" stroke-width="1.5" />
+<text x="1130" y="823" fill="#eff7fb" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">GitHub Pages</text>
+<text x="1130" y="852" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Apresentação estática</text>
+<text x="1130" y="876" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Documentação e downloads</text>
+<path d="M225 791 V745 H420 V360 H380" fill="none" stroke="#688494" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="7 6"/>
+<path d="M380 430 H410 V735 H590 V791" fill="none" stroke="#688494" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="7 6"/>
+<path d="M1370 470 H1380 V743 H925 V791" fill="none" stroke="#688494" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="7 6"/>
+<text x="50" y="925" fill="#b0c6d4" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">Contínuo: caminho implementado   /   Tracejado: expansão ou integração pendente   /   Portas de uma instalação nova em perfil server</text>
+</svg>

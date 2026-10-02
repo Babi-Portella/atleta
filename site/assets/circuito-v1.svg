@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1080" role="img" aria-labelledby="title desc">
+<title id="title">ATLETA — esquema eletrônico simplificado do M5StickC Plus2</title><desc id="desc">Diagrama do projeto ATLETA, primeira entrega N1, atualizado em outubro de 2026.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8" fill="#21a5b0"/></marker></defs>
+<rect width="1440" height="1080" fill="#ffffff"/>
+<text x="50" y="57" fill="#061a2f" font-family="Segoe UI,Arial,sans-serif" font-size="30" font-weight="700" text-anchor="start">ATLETA / CIRCUITO ELETRÔNICO V1</text>
+<text x="50" y="90" fill="#4b6070" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="400" text-anchor="start">M5StickC Plus2 · sinais usados pelo firmware · componentes já integrados à placa</text>
+<rect x="35" y="117" width="1370" height="805" rx="8" fill="#fff" stroke="#b6c8d2" stroke-width="1.5" stroke-dasharray="7 6"/>
+<text x="55" y="146" fill="#4b6070" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="650" text-anchor="start">LIMITE DA PLACA PRONTA</text>
+<rect x="60" y="177" width="290" height="84" rx="8" fill="#f3f7f9" stroke="#657d8c" stroke-width="1.5" />
+<text x="80" y="209" fill="#061a2f" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">USB-C / 5 V</text>
+<text x="80" y="238" fill="#4b6070" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Cabo de dados + alimentação</text>
+<rect x="60" y="316" width="290" height="108" rx="8" fill="#f3f7f9" stroke="#657d8c" stroke-width="1.5" />
+<text x="80" y="348" fill="#061a2f" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Carga e regulação</text>
+<text x="80" y="377" fill="#4b6070" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Subsistema interno da placa</text>
+<text x="80" y="401" fill="#4b6070" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Alimentação da lógica: 3,3 V</text>
+<path d="M205 261 V316" fill="none" stroke="#657d8c" stroke-width="2.5"  />
+<text x="220" y="295" fill="#4b6070" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">VBUS</text>
+<path d="M350 370 H460 V210 H525" fill="none" stroke="#657d8c" stroke-width="2.5"  />
+<text x="388" y="202" fill="#087581" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="650" text-anchor="start">+3,3 V</text>
+<rect x="525" y="190" width="340" height="460" rx="8" fill="#edf3f6" stroke="#061a2f" stroke-width="1.5" />
+<text x="695" y="237" fill="#061a2f" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="700" text-anchor="middle">ESP32-PICO-V3-02</text>
+<text x="695" y="270" fill="#4b6070" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="400" text-anchor="middle">M5StickC Plus2</text>
+<text x="550" y="320" fill="#061a2f" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">GPIO21 / SDA</text>
+<text x="550" y="370" fill="#061a2f" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">GPIO22 / SCL</text>
+<text x="550" y="430" fill="#061a2f" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">GPIO15, 13, 14, 12, 5, 27</text>
+<text x="550" y="480" fill="#061a2f" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">GPIO37 / botão A</text>
+<text x="550" y="530" fill="#061a2f" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">GPIO39 / botão B</text>
+<text x="550" y="580" fill="#061a2f" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">GPIO4 / HOLD = 1</text>
+<text x="550" y="623" fill="#061a2f" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">GPIO38 / leitura de bateria</text>
+<rect x="1120" y="235" width="250" height="155" rx="8" fill="#f3f7f9" stroke="#657d8c" stroke-width="1.5" />
+<text x="1140" y="267" fill="#061a2f" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">U / MPU6886</text>
+<text x="1140" y="296" fill="#4b6070" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Acelerômetro + giroscópio</text>
+<text x="1140" y="320" fill="#4b6070" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">VCC 3,3 V / GND comum</text>
+<text x="1140" y="344" fill="#4b6070" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">I²C interno</text>
+<path d="M865 313 H1120" fill="none" stroke="#087581" stroke-width="2.5"  />
+<path d="M865 363 H1120" fill="none" stroke="#087581" stroke-width="2.5"  />
+<text x="1002" y="302" fill="#087581" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">SDA</text>
+<text x="1020" y="352" fill="#087581" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">SCL</text>
+<path d="M960 218 H1040 M960 218 V233 M1040 218 V233" fill="none" stroke="#657d8c" stroke-width="2.5"  />
+<text x="1000" y="203" fill="#087581" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="650" text-anchor="middle">+3,3 V</text>
+<path d="M960 233 v12 l-7 5 l14 10 l-14 10 l14 10 l-14 10 l7 5 v12" fill="none" stroke="#657d8c" stroke-width="2"  />
+<path d="M1040 233 v12 l-7 5 l14 10 l-14 10 l14 10 l-14 10 l7 5 v12" fill="none" stroke="#657d8c" stroke-width="2"  />
+<path d="M960 307 V313 M1040 307 V363" fill="none" stroke="#657d8c" stroke-width="2.5"  />
+<text x="942" y="272" fill="#4b6070" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="end">2k2</text>
+<text x="1090" y="272" fill="#4b6070" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="middle">2k2</text>
+<text x="943" y="410" fill="#4b6070" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">Pull-ups já presentes na placa</text>
+<rect x="1085" y="452" width="285" height="120" rx="8" fill="#f3f7f9" stroke="#657d8c" stroke-width="1.5" />
+<text x="1105" y="484" fill="#061a2f" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Tela / ST7789V2</text>
+<text x="1105" y="513" fill="#4b6070" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">MOSI15 / CLK13 / DC14</text>
+<text x="1105" y="537" fill="#4b6070" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">RST12 / CS5 / BL27</text>
+<path d="M865 427 H1018 V488 H1085" fill="none" stroke="#657d8c" stroke-width="2.5"  />
+<text x="897" y="445" fill="#4b6070" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">SPI + controle</text>
+<rect x="60" y="623" width="320" height="103" rx="8" fill="#f3f7f9" stroke="#657d8c" stroke-width="1.5" />
+<text x="80" y="655" fill="#061a2f" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Ponte USB / CH9102F</text>
+<text x="80" y="684" fill="#4b6070" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">USB D+ e D− → UART0</text>
+<text x="80" y="708" fill="#4b6070" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">ESP32 TX GPIO1 / RX GPIO3</text>
+<path d="M60 219 H45 V676 H60" fill="none" stroke="#657d8c" stroke-width="2.5"  />
+<path d="M380 673 H450 V690 H595 V650" fill="none" stroke="#657d8c" stroke-width="2.5"  />
+<text x="463" y="711" fill="#4b6070" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">Serial / 115200 baud</text>
+<path d="M865 477 H1000 V760 H1090" fill="none" stroke="#657d8c" stroke-width="2.5"  />
+<path d="M865 527 H970 V810 H1240 V760 H1310" fill="none" stroke="#657d8c" stroke-width="2.5"  />
+<text x="1000" y="753" fill="#061a2f" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="650" text-anchor="start">A / GPIO37</text>
+<path d="M1070 642 v12 l-7 5 l14 10 l-14 10 l14 10 l-14 10 l7 5 v12" fill="none" stroke="#657d8c" stroke-width="2"  />
+<path d="M1070 716 V760 H1090 M1070 642 V630" fill="none" stroke="#657d8c" stroke-width="2.5"  />
+<text x="1104" y="673" fill="#4b6070" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">10 kΩ</text>
+<text x="1070" y="621" fill="#087581" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="middle">+3,3 V</text>
+<path d="M1090 760 l32 -17 M1130 760 H1160 V780" fill="none" stroke="#657d8c" stroke-width="2.5"  />
+<path d="M1160 780 v10 M1146 790 h28 M1151 796 h18 M1156 802 h8" fill="none" stroke="#657d8c" stroke-width="2"  />
+<text x="1220" y="753" fill="#061a2f" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="650" text-anchor="start">B / GPIO39</text>
+<path d="M1290 642 v12 l-7 5 l14 10 l-14 10 l14 10 l-14 10 l7 5 v12" fill="none" stroke="#657d8c" stroke-width="2"  />
+<path d="M1290 716 V760 H1310 M1290 642 V630" fill="none" stroke="#657d8c" stroke-width="2.5"  />
+<text x="1324" y="673" fill="#4b6070" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">10 kΩ</text>
+<text x="1290" y="621" fill="#087581" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="middle">+3,3 V</text>
+<path d="M1310 760 l32 -17 M1350 760 H1380 V780" fill="none" stroke="#657d8c" stroke-width="2.5"  />
+<path d="M1380 780 v10 M1366 790 h28 M1371 796 h18 M1376 802 h8" fill="none" stroke="#657d8c" stroke-width="2"  />
+<path d="M525 576 H425 V399 H350" fill="none" stroke="#657d8c" stroke-width="2.5"  />
+<text x="439" y="473" fill="#4b6070" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">HOLD</text>
+<rect x="60" y="464" width="290" height="111" rx="8" fill="#f3f7f9" stroke="#657d8c" stroke-width="1.5" />
+<text x="80" y="496" fill="#061a2f" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Bateria interna</text>
+<text x="80" y="525" fill="#4b6070" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Li-ion / 3,7 V / 200 mAh</text>
+<text x="80" y="549" fill="#4b6070" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Medição pelo circuito interno</text>
+<path d="M205 464 V424" fill="none" stroke="#657d8c" stroke-width="2.5"  />
+<path d="M325 506 V498 M311 498 H339 M317 490 H333 M325 490 V477" fill="none" stroke="#657d8c" stroke-width="2"  />
+<path d="M205 575 v10 M191 585 h28 M196 591 h18 M201 597 h8" fill="none" stroke="#657d8c" stroke-width="2"  />
+<path d="M740 730 v10 M726 740 h28 M731 746 h18 M736 752 h8" fill="none" stroke="#657d8c" stroke-width="2"  />
+<path d="M740 650 V730" fill="none" stroke="#657d8c" stroke-width="2.5"  />
+<text x="761" y="755" fill="#4b6070" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">GND comum</text>
+<rect x="60" y="799" width="690" height="94" rx="8" fill="#f3f7f9" stroke="#657d8c" stroke-width="1.5" stroke-dasharray="7 6"/>
+<text x="80" y="831" fill="#061a2f" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Grove HY2.0-4P / sem conexão nesta versão</text>
+<text x="80" y="860" fill="#4b6070" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Preto: GND  ·  Vermelho: 5 V  ·  Amarelo: GPIO32  ·  Branco: GPIO33</text>
+<text x="800" y="850" fill="#087581" font-family="Segoe UI,Arial,sans-serif" font-size="22" font-weight="650" text-anchor="start">Wi-Fi 2,4 GHz → servidor EMQX</text>
+<text x="800" y="880" fill="#4b6070" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Transmissão sem ligação elétrica ao servidor</text>
+<text x="50" y="962" fill="#4b6070" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Sem sensores externos na V1. BPM, temperatura da pele e GNSS dependem de modelos e ligações confirmados.</text>
+<text x="50" y="997" fill="#4b6070" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Esquema simplificado: omite componentes não usados e detalhes de carga/regulação. Não substitui o esquema completo.</text>
+<text x="50" y="1032" fill="#4b6070" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Fonte: M5Stack / StickC-Plus2 / esquema oficial v0.5 e PinMap, consultados em 28/09/2026. Lógica do ESP32: 3,3 V.</text>
+</svg>
