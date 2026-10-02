@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-10-02T18:17:31.781566+00:00",
+  "created_at_utc": "2026-10-02T18:46:14.499801+00:00",
   "passed": true,
   "firmware_version": "2.1.7",
   "firmware_sources_and_images_match_manifest": true,
@@ -13,13 +13,13 @@
     {
       "file": "firmware-plataforma-v1.zip",
       "bytes": 16994916,
-      "sha256": "f113041565a9607cad12aaa9b05c7728fdadede393af42b8a2e5d24a0673aeb5",
+      "sha256": "fa5858197f74f0613dc3d25dafa3ed2b93241ac7a63fbbf91b35abc740e2ec32",
       "files": 113
     },
     {
       "file": "documentacao-v1.zip",
-      "bytes": 2269053,
-      "sha256": "632394eea3f016e235b60be45427a3f46a519977bc19b7fbf54bfa488bc173d7",
+      "bytes": 2352023,
+      "sha256": "7edd1392c28de633fdbc0bd3482d80186898f7de081ecacd33dda7458716d288",
       "files": 10
     }
   ]

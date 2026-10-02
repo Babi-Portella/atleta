@@ -1,2 +1,2 @@
-f113041565a9607cad12aaa9b05c7728fdadede393af42b8a2e5d24a0673aeb5  firmware-plataforma-v1.zip
-632394eea3f016e235b60be45427a3f46a519977bc19b7fbf54bfa488bc173d7  documentacao-v1.zip
+fa5858197f74f0613dc3d25dafa3ed2b93241ac7a63fbbf91b35abc740e2ec32  firmware-plataforma-v1.zip
+7edd1392c28de633fdbc0bd3482d80186898f7de081ecacd33dda7458716d288  documentacao-v1.zip
