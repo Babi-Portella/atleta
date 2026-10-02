@@ -1,0 +1,13 @@
+runtime/
+**/runtime/
+**/migracao/
+**/.pio/
+.pio-core/
+.venv*/
+__pycache__/
+*.pyc
+config.local.json
+**/config.local.json
+endereco-servidor.json
+**/endereco-servidor.json
+*.zip.tmp
