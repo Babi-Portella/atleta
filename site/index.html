@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ATLETA: projeto de monitoramento de atividade com M5StickC Plus2, firmware MQTT, broker EMQX e banco MySQL. Arquitetura, circuito e arquivos da primeira entrega.">
+  <meta name="theme-color" content="#061a2f">
+  <title>ATLETA — Monitoramento de atividade com IoT</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Atleta, início"><span class="brand-mark" aria-hidden="true">A</span>ATLETA<span class="brand-caption">Projeto Integrador 6</span></a>
+    <nav aria-label="Navegação principal">
+      <a href="#home">Home</a><a href="#plataforma">Plataforma</a><a href="#dispositivos">Dispositivos</a><a href="#aplicativo">Aplicativo</a>
+    </nav>
+  </header>
+  <main id="conteudo">
+    <section class="hero" id="home" aria-labelledby="titulo">
+      <div class="hero-top"><span class="eyebrow">SISTEMAS EMBARCADOS / INTERNET DAS COISAS</span><span class="version">N1 · PRIMEIRA ENTREGA · OUT 2026</span></div>
+      <h1 id="titulo" class="sr-only">ATLETA — Monitoramento de atividade com IoT</h1>
+      <a class="banner-link" href="assets/banner-atleta-v1.png" target="_blank" rel="noopener" aria-label="Abrir o banner em tamanho original"><img class="banner" src="assets/banner-atleta-v1.png" width="1536" height="1024" alt="Banner Monitoramento Inteligente de Atletas. Mostra corredor, ESP32, fluxo de dados e painéis ilustrativos com frequência cardíaca, oxigenação e temperatura."></a>
+      <div class="hero-bottom"><p>Conceito visual: BPM, SpO₂, temperatura e aplicativo móvel mostrados na arte são expansões futuras. O protótipo atual mede movimento e apresenta dados no painel Windows.</p><a href="#plataforma">Conheça o sistema <span aria-hidden="true">↓</span></a></div>
+    </section>
+
+    <section class="section intro" id="projeto" aria-labelledby="projeto-title">
+      <div class="section-label"><span class="index">01</span><span>O PROJETO</span></div>
+      <div class="intro-main"><h2 id="projeto-title">Atividade física.<br>Dados conectados.</h2><p class="lead">O ATLETA usa um dispositivo no pulso para registrar movimento, acompanhar uma sessão e enviar as leituras à plataforma própria do projeto.</p><p>O M5StickC Plus2 coleta aceleração e rotação com seu sensor interno. O firmware calcula passos experimentais e envia mensagens pelo Wi-Fi. O broker EMQX recebe os dados, aplica as permissões e os grava no MySQL. O painel Windows permite consultar as leituras e o histórico.</p></div>
+      <div class="facts"><div><strong>50 Hz</strong><span>Leitura do sensor de movimento</span></div><div><strong>2 s</strong><span>Intervalo de publicação MQTT</span></div><div><strong>3 camadas</strong><span>Dispositivo, comunicação e plataforma</span></div></div>
+      <div class="capabilities"><article><span class="mini-label">COLETA</span><h3>Movimento e bateria</h3><p>Aceleração em três eixos, rotação, tensão da bateria e sinal Wi-Fi.</p></article><article><span class="mini-label">SESSÃO</span><h3>Atividade acompanhada</h3><p>Tempo ativo, pausa e retomada, passos experimentais e estimativas a partir do perfil.</p></article><article><span class="mini-label">PLATAFORMA</span><h3>Leituras persistidas</h3><p>Autenticação, autorização por tópico e gravação do JSON com identidade e horário de recepção.</p></article></div>
+    </section>
+
+    <section class="section architecture" id="plataforma" aria-labelledby="architecture-title">
+      <div class="section-label"><span class="index">02</span><span>PLATAFORMA</span></div>
+      <div class="section-heading"><div><h2 id="architecture-title">Um caminho para cada leitura.</h2><p>A placa publica; a plataforma recebe, armazena e apresenta.</p></div><a class="text-link" href="assets/diagrama-projeto-v1.svg" target="_blank" rel="noopener">Abrir diagrama <span aria-hidden="true">↗</span></a></div>
+      <figure class="diagram"><a href="assets/diagrama-projeto-v1.svg" target="_blank" rel="noopener" aria-label="Abrir diagrama completo em tamanho original"><img src="assets/diagrama-projeto-v1.svg" width="1440" height="940" loading="lazy" alt="Arquitetura: sensores internos e firmware no M5, Wi-Fi MQTT, broker EMQX com autenticação e ACL MySQL, regra e ação de persistência, banco de telemetria e painel Windows. Extensões pendentes marcadas com linhas tracejadas."></a><figcaption>Linhas contínuas: caminho implementado. Tracejadas: expansões e integrações pendentes.</figcaption></figure>
+      <div class="architecture-notes"><p><strong>Plataforma própria.</strong> EMQX 6.1.1 e MySQL 8.4.8 executam em containers Docker no computador servidor.</p><p><strong>GitPage.</strong> Esta página apresenta o projeto e os arquivos. A consulta ao banco acontece no painel Windows.</p><p><strong>Dados identificados.</strong> Leituras físicas usam <code>source=device</code>. Mensagens de teste usam <code>source=test</code>.</p></div>
+    </section>
+
+    <section class="section firmware" id="dispositivos" aria-labelledby="firmware-title">
+      <div class="section-label"><span class="index">03</span><span>DISPOSITIVOS</span></div>
+      <div class="section-heading"><div><h2 id="firmware-title">M5StickC Plus2.<br>Da placa ao MySQL.</h2><p>Arduino C++ · PlatformIO · MQTT 3.1.1 · firmware 2.1.7</p></div><a class="button dark" href="downloads/firmware-plataforma-v1.zip" download>Baixar firmware + plataforma <span aria-hidden="true">↓</span></a></div>
+      <p class="device-description">O relógio usa o MPU6886 integrado para ler aceleração e rotação a 50 Hz. A versão 2.1.7 filtra o movimento, confirma sequências de passos e usa o giroscópio para reduzir contagens durante o manuseio. Tela, botões, bateria e Wi-Fi funcionam na placa; sensores fisiológicos externos ainda não estão integrados.</p>
+      <div class="firmware-grid"><div><ol class="steps"><li><span>01</span><div><h3>Inicie o servidor</h3><p>Abra o painel Windows com Docker instalado. Habilite a conexão do M5 pela rede e inicie EMQX e MySQL.</p></div></li><li><span>02</span><div><h3>Grave e configure o M5</h3><p>Use o firmware incluído e envie por USB a rede Wi-Fi, o endereço do servidor e a credencial MQTT gerada pela plataforma.</p></div></li><li><span>03</span><div><h3>Confirme dados novos no banco</h3><p>Veja o cliente conectado no EMQX e confira as últimas leituras em “Ver dados do atleta”. Os horários devem avançar.</p></div></li></ol><p class="note">O IP e as credenciais são configuráveis por USB e ficam salvos na placa. O pacote acompanha código, imagem compilada e instruções completas.</p></div><div class="code-panel"><div class="code-heading"><span>Mensagem MQTT</span><span class="code-tag">EXEMPLO SINTÉTICO</span></div><p class="topic">atletas/lab-teste-01/telemetria</p><pre><code id="payload">{
+  "schema_version": 1,
+  "source": "test",
+  "boot_id": "exemplo-sintetico",
+  "sample_seq": 0,
+  "uptime_ms": 2000,
+  "accel_x_g": 0.125,
+  "accel_y_g": -0.25,
+  "accel_z_g": 0.98,
+  "battery_mv": null,
+  "wifi_rssi_dbm": null
+}</code></pre><button class="copy" type="button" data-copy="payload">Copiar JSON</button><p id="copy-status" class="copy-status" role="status" aria-live="polite"></p></div></div>
+      <div class="protocol"><div><span>TRANSPORTE</span><strong>Wi-Fi 2,4 GHz / MQTT TCP</strong></div><div><span>ACESSO</span><strong>bcrypt + ACL por tópico</strong></div><div><span>PERSISTÊNCIA</span><strong>Regra EMQX → ação MySQL</strong></div></div>
+      <p class="note">Esta versão usa QoS 0, sem TLS e sem fila persistente de amostras offline. A confirmação de gravação é feita no banco.</p>
+    </section>
+
+    <section class="section circuit" id="circuito" aria-labelledby="circuit-title">
+      <div class="section-label"><span class="index">04</span><span>CIRCUITO ELETRÔNICO</span></div>
+      <div class="section-heading"><div><h2 id="circuit-title">O protótipo começa por dentro.</h2><p>Sensor, tela, bateria e botões já estão integrados ao M5StickC Plus2.</p></div><a class="text-link" href="assets/circuito-v1.svg" target="_blank" rel="noopener">Abrir circuito <span aria-hidden="true">↗</span></a></div>
+      <figure class="diagram light"><a href="assets/circuito-v1.svg" target="_blank" rel="noopener" aria-label="Abrir esquema eletrônico em tamanho original"><img src="assets/circuito-v1.svg" width="1440" height="1080" loading="lazy" alt="Esquema simplificado do M5StickC Plus2: USB-C e CH9102F, alimentação interna e bateria, ESP32, sensor MPU6886 via SDA21 e SCL22 com pull-ups integrados, tela SPI, botões A e B, HOLD GPIO4 e Grove sem ligação externa."></a><figcaption>Esquema simplificado dos sinais usados nesta versão, baseado na documentação do fabricante.</figcaption></figure>
+      <div class="circuit-details"><div><h3>Montagem da primeira versão</h3><p>Uma placa M5StickC Plus2, pulseira e cabo USB-C de dados. A comunicação com o servidor acontece pela rede Wi-Fi de 2,4 GHz.</p></div><div><h3>Conexões do sensor</h3><p>O MPU6886 usa o I²C interno: SDA no GPIO21 e SCL no GPIO22. Os componentes desenhados já fazem parte da placa.</p></div><div><h3>Expansões posteriores</h3><p>BPM, temperatura da pele e GPS dependem da identificação dos módulos e de suas ligações. O Grove fica sem conexão nesta versão.</p></div></div>
+      <p class="source">Referência: <a href="https://docs.m5stack.com/en/core/M5StickC%20PLUS2" target="_blank" rel="noopener">pinagem oficial M5Stack</a> e <a href="https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/512/Sch_M5StickC_Plus2_v0.5.pdf" target="_blank" rel="noopener">esquema eletrônico do fabricante</a>.</p>
+    </section>
+
+    <section class="section application" id="aplicativo" aria-labelledby="app-title">
+      <div class="section-label"><span class="index">05</span><span>APLICATIVO</span></div>
+      <div class="section-heading"><div><h2 id="app-title">Os dados do atleta,<br>no computador.</h2><p>Painel Windows 1.5.0 · interface implementada nesta primeira versão</p></div><a class="button dark" href="downloads/firmware-plataforma-v1.zip" download>Baixar o programa <span aria-hidden="true">↓</span></a></div>
+      <div class="application-grid"><div><p class="lead">O painel inicia a plataforma, configura o M5 por USB e consulta as leituras gravadas no MySQL.</p><ol class="steps"><li><span>01</span><div><h3>Prepare a plataforma</h3><p>Inicie EMQX e MySQL pelo programa, com Docker Desktop instalado.</p></div></li><li><span>02</span><div><h3>Conecte o relógio</h3><p>Envie por USB a rede Wi-Fi e o endereço do servidor. Depois da confirmação, as leituras chegam sem cabo.</p></div></li><li><span>03</span><div><h3>Acompanhe a sessão</h3><p>Consulte passos, duração, sensores e histórico. A interface indica quando há dados novos ou uma leitura antiga.</p></div></li></ol></div><figure class="application-preview"><img src="assets/painel-atleta.png" width="946" height="789" loading="lazy" alt="Captura do painel Windows implementado, com cartões da sessão, sensores e histórico de leituras."><figcaption>Captura da interface implementada. A imagem é um registro de teste; esta GitPage não mostra dados ao vivo.</figcaption></figure></div>
+      <p class="note">Distância e calorias dependem do perfil informado. A primeira entrega possui um programa Windows; o aplicativo móvel ilustrado no banner é uma expansão planejada.</p>
+    </section>
+
+    <section class="section status" id="validacao" aria-labelledby="status-title">
+      <div class="section-label"><span class="index">06</span><span>VALIDAÇÃO</span></div>
+      <div class="section-heading"><div><h2 id="status-title">O que já foi demonstrado.</h2><p>Resultados registrados no laboratório em 02/10/2026.</p></div></div>
+      <div class="status-grid"><article><span class="status-label">PLATAFORMA PRÓPRIA</span><h3>M5 → EMQX → MySQL</h3><p>Mensagens físicas chegaram por Wi-Fi ao banco. Persistência, autenticação, autorização e deduplicação possuem evidências no projeto.</p></article><article><span class="status-label">FIRMWARE 2.1.7 · WI-FI</span><h3>12.113 amostras</h3><p>Captura do sensor recebida pelo MQTT/MySQL, sem mudança de sessão ou linha malformada. Foram observadas cinco lacunas de transmissão após o último passo registrado.</p></article><article><span class="status-label pending">TESTE DE CAMINHADA</span><h3>17 de 20 passos</h3><p>Uma caminhada no espaço pequeno registrou três passos a menos. Colocar e manusear o relógio não acrescentou passos nesse teste. A precisão geral ainda precisa de mais ensaios.</p></article></div>
+      <details class="limits"><summary>Estimativas e recursos que ainda precisam de validação</summary><div><p>Passos usam um detector experimental. Distância e calorias dependem do comprimento de um passo, peso e intensidade MET informados; sem esses dados, o firmware envia valores indisponíveis.</p><p>BPM, temperatura da pele e coordenadas GPS permanecem <code>null</code> com estados explícitos de sensor não configurado. A precisão em atividade real, a autonomia e o cliente BLE remoto ainda precisam de ensaios.</p><p>Os resultados acima são históricos. Esta página não indica conexão ao vivo com o dispositivo.</p></div></details>
+    </section>
+
+    <section class="section team" id="equipe" aria-labelledby="team-title">
+      <div class="section-label"><span class="index">07</span><span>EQUIPE</span></div>
+      <div class="section-heading"><div><h2 id="team-title">Um projeto desenvolvido em equipe.</h2><p>Projeto Integrador 6 · primeira entrega da N1</p></div></div>
+      <div class="team-list"><article><span class="mini-label">INTEGRANTE</span><h3>Babi Portella</h3><a class="text-link" href="https://github.com/Babi-Portella" target="_blank" rel="noopener">GitHub · Babi-Portella <span aria-hidden="true">↗</span></a></article><article><span class="mini-label">INTEGRANTE</span><h3>Emilio467</h3><a class="text-link" href="https://github.com/Emilio467" target="_blank" rel="noopener">GitHub · Emilio467 <span aria-hidden="true">↗</span></a></article><article><span class="mini-label">INTEGRANTE</span><h3>jvBaracho</h3><a class="text-link" href="https://github.com/jvBaracho" target="_blank" rel="noopener">GitHub · jvBaracho <span aria-hidden="true">↗</span></a></article></div>
+    </section>
+
+    <section class="section downloads" id="entrega" aria-labelledby="downloads-title">
+      <div class="section-label"><span class="index">08</span><span>ARQUIVOS DA ENTREGA</span></div>
+      <div class="section-heading"><div><h2 id="downloads-title">Pronto para estudar e apresentar.</h2><p>Código, documentação e visuais organizados na mesma versão.</p></div></div>
+      <div class="download-list"><a href="downloads/firmware-plataforma-v1.zip" download><span class="file-number">01</span><div><strong>Firmware e plataforma</strong><span>Fontes, binários do M5, painel Windows, EMQX, SQL e guia de execução · ZIP</span></div><span class="file-arrow" aria-hidden="true">↓</span></a><a href="downloads/documentacao-v1.zip" download><span class="file-number">02</span><div><strong>Diagramas e documentação</strong><span>Arquitetura, circuito, pinagem, modelo de dados e estado da validação · ZIP</span></div><span class="file-arrow" aria-hidden="true">↓</span></a><a href="assets/banner-atleta-v1.png" download><span class="file-number">03</span><div><strong>Banner atualizado</strong><span>Arte conceitual do sistema em alta resolução · PNG</span></div><span class="file-arrow" aria-hidden="true">↓</span></a></div>
+      <p class="note">Entrega N1: GitPage com Home, Plataforma, Dispositivos e Aplicativo; firmware com MQTT e MySQL; diagrama completo; banner e circuito. Os pacotes acompanham o firmware 2.1.7 e suas instruções.</p>
+    </section>
+  </main>
+  <footer><a class="brand" href="#home"><span class="brand-mark" aria-hidden="true">A</span>ATLETA</a><p>Projeto Integrador 6 · N1</p><div class="footer-links"><a href="#equipe">Equipe</a><a href="#entrega">Arquivos</a><a href="https://github.com/Babi-Portella/atleta" target="_blank" rel="noopener">Código no GitHub</a></div><span>Atualizado em 02.10.2026</span></footer>
+</body>
+</html>
