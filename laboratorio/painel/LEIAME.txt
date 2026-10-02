@@ -1,0 +1,140 @@
+ATLETA IP 1.5.0 — LABORATÓRIO, M5 E DADOS DO ATLETA
+
+1. Abra PainelIP.exe.
+2. Para receber o M5 pela rede, marque "Permitir conexão do M5 pela rede".
+3. Clique em "Iniciar laboratório e abrir Dashboard".
+4. Aguarde a conclusão. O navegador abrirá o Dashboard.
+5. Entre com admin. Use "Copiar senha admin" e cole a senha no login.
+6. Com o firmware do laboratório já gravado no M5, use "Configurar Wi-Fi e perfil
+   do M5 por USB". Preencha a rede e clique em "Enviar ao M5 por USB".
+7. Clique em "Ver dados do atleta" para acompanhar as leituras salvas no MySQL.
+
+WI-FI AUTOMÁTICO E CONFERÊNCIA — VERSÃO 1.5.0
+Ao abrir Configurar Wi-Fi e perfil do M5 por USB, o programa consulta o nome
+da conexão Wi-Fi ativa do Windows. A senha já salva no projeto é mantida
+somente se o nome da rede for exatamente o mesmo. Para outra rede, informe
+a senha no campo mascarado. Em PC com cabo, informe o Wi-Fi do M5 manualmente.
+O botão Detectar Wi-Fi deste computador repete a consulta quando necessário.
+Enviar ao M5 por USB atualiza o endereço do servidor deste PC e confere,
+por até aproximadamente 40 segundos, USB, Wi-Fi, MQTT e uma leitura nova
+gravada no MySQL. Configuração salva na placa, sozinha, não é confirmação
+de conexão. O resultado fica em runtime/diagnostico-conexao-m5.json e no log
+acessível por Ver detalhes. Nenhuma senha do Windows é consultada.
+
+MIGRAÇÃO — VERSÃO 1.4.0
+No pacote privado Atleta-Migracao-PRIVADO.zip, o histórico acompanha a cópia.
+Iniciar laboratório restaura e confere os dados antes de iniciar o EMQX.
+Repetir Iniciar não duplica registros; conflitos não substituem dados existentes.
+Veja LEIA PRIMEIRO.txt na raiz do pacote privado. O perfil e a configuração Wi-Fi
+acompanham essa cópia; as credenciais do novo servidor são geradas no destino.
+O ZIP público continua sem configuração privada e sem snapshot do banco.
+
+DADOS DO ATLETA — NOVO NA VERSÃO 1.3.0
+A janela atualiza a cada 2 segundos e mostra passos, tempo ativo, bateria,
+distância, calorias, ritmo, BPM, temperatura da pele, GPS e estados da última
+leitura. Campos sem sensor ou perfil aparecem como Indisponível. O histórico
+mostra até 120 leituras reais mais recentes; selecione uma e pressione Enter
+para abrir todos os campos. Leituras antigas recebem aviso após 10 segundos.
+Na versão 1.3.1, a distância aparece em metros abaixo de 1.000 m e em quilômetros
+a partir de 1.000 m. A mudança é de apresentação na tela do programa Windows.
+
+Use no computador que executa o MySQL do kit. O acesso usa uma conta somente
+de consulta. O ID do atleta aparece quando informado no perfil; a versão atual
+acompanha o dispositivo m5-atleta-01. Não há cadastro de vários atletas nesta tela.
+Para abrir diretamente: PainelIP.exe --dados-atleta
+
+A versão 1.2.0 acrescenta o formulário de rede e perfil opcional, com senha
+mascarada, seleção da porta USB e confirmação de recebimento pela placa.
+Peso, comprimento de passo, MET e ID do atleta podem ficar em branco. Distância
+e calorias ficam indisponíveis até os parâmetros correspondentes serem preenchidos.
+
+SE A INICIALIZAÇÃO FALHAR
+Abra o Docker Desktop e conclua a primeira configuração. Confira se o mecanismo
+Linux está funcionando e tente iniciar novamente pelo painel.
+Use "Ver detalhes" para consultar runtime/painel-acao.log. O registro contém a
+causa retornada pelo Docker e as falhas inesperadas, com senhas locais ocultadas.
+Não envie a pasta runtime inteira: ela contém as credenciais do laboratório.
+
+A versão 1.1.1 reconhece o Docker instalado só para o usuário do Windows, mesmo
+quando o painel foi aberto antes de a instalação atualizar o PATH. Também mantém
+os auxiliares do Docker disponíveis durante os downloads e melhora os erros.
+Para atualizar, feche o painel e substitua somente PainelIP.exe na mesma pasta.
+
+O BOTÃO FAZ AUTOMATICAMENTE
+- Localiza o Docker Desktop instalado e o inicia se necessário.
+- Aguarda o mecanismo de containers Linux ficar pronto.
+- Prepara os arquivos do laboratório e gera credenciais na primeira utilização.
+- Inicia o EMQX e o MySQL da stack dedicada atleta-lab.
+- Aguarda os dois serviços ficarem saudáveis.
+- Confere MQTT e Dashboard, detecta o IP e salva a configuração.
+- Abre o Dashboard no navegador.
+
+Docker Desktop precisa estar instalado e com sua configuração inicial concluída.
+Caso esteja ausente, o painel oferece "Instalar Docker", que abre as instruções
+oficiais. Instalação, permissões do Windows, WSL e eventual reinício são etapas
+iniciais do Docker. Não é necessário instalar Python nem abrir PowerShell para
+usar os botões depois disso.
+
+O primeiro download das imagens de EMQX/MySQL pode demorar e precisa de Internet.
+As próximas inicializações usam as imagens já baixadas.
+
+BOTÕES
+- Iniciar laboratório e abrir Dashboard: prepara e inicia a stack própria.
+- Parar laboratório: para EMQX e MySQL, preservando containers e volumes.
+- Atualizar IP: verifica e salva o endereço sem iniciar serviços.
+- Copiar IP: copia o endereço mostrado.
+- Abrir Dashboard: abre um painel que já está respondendo.
+- Copiar senha admin: copia a senha gerada desta instalação, mediante seu clique.
+- Configurar Wi-Fi e perfil do M5 por USB: salva e envia a configuração à placa.
+- Ver dados do atleta: abre a consulta automática das leituras reais já salvas.
+- Ver detalhes: abre o registro local de operações, com credenciais ocultadas.
+
+Fechar a janela NÃO para os serviços. Use "Parar laboratório" para encerrá-los.
+O Docker Desktop permanece disponível para outros projetos.
+
+ONDE EXECUTAR
+O aplicativo identifica o computador onde está aberto. Para descobrir o IP do
+laboratório, execute-o no próprio servidor do laboratório. Não varre a rede.
+
+Junto ao kit, encontra a pasta laboratorio/. Se for copiado sozinho, prepara uma
+subpasta laboratorio/ ao lado do EXE. Escolha uma pasta em que seu usuário possa
+gravar. Outra pasta pode ser indicada por --pasta "C:\caminho\laboratorio".
+
+Caso já existam volumes atleta-lab nesse Docker e esta cópia não possua as
+credenciais, o painel pede para usar a pasta original. Não recria senhas sobre
+um banco existente. Para mover a instalação no mesmo PC, preserve sua pasta
+runtime privada; não a distribua junto ao executável.
+
+REDE E CONFIGURAÇÃO
+Novas instalações com acesso pela rede usam MQTT 1883 e Dashboard 18083.
+Novas instalações restritas ao PC usam MQTT 18830 e Dashboard 18084.
+Em instalações existentes, mudar a opção de rede preserva as portas cadastradas.
+O painel mostra as portas efetivas. O MySQL continua restrito a localhost.
+
+O firewall não é alterado automaticamente. O teste a partir do M5 ainda precisa
+ser feito na rede real. O botão de iniciar controla uma instância dedicada; se
+o professor já tiver um broker compartilhado, siga o guia manual do Dashboard.
+Uma porta ocupada gera erro em vez de substituir o serviço existente.
+
+O IP/porta são atualizados em config.local.json e também em
+runtime/device-config.json, se este arquivo existir. Wi-Fi, senhas e identidade
+existentes são preservados. endereco-servidor.json não contém senhas.
+Após mudar o endereço, use "Configurar Wi-Fi e perfil do M5 por USB" e "Enviar
+ao M5 por USB". O painel exige o firmware do laboratório já instalado; não grava
+uma nova imagem de firmware. Feche outros monitores seriais durante o envio.
+
+ESTADOS
+- Online: MQTT e o status do EMQX responderam no IP de rede.
+- Pronto para usar neste PC: o MQTT respondeu pelo acesso local.
+- MQTT online / Dashboard indisponível: resposta MQTT sem identificar o painel.
+- Offline: servidor sem resposta nas portas consultadas.
+
+O estado não mede Internet, leituras físicas, login do M5 ou persistência MySQL.
+A verificação acontece ao abrir, ao concluir operações e com F5. Abrir a janela
+sozinho não inicia serviços. Um teste MQTT com identidade temporária pode gerar
+uma recusa de autenticação no log; ele não publica nem assina mensagens.
+
+Docker Desktop pode retomar outros serviços conforme as preferências dele.
+Os comandos deste painel de iniciar/parar se restringem ao projeto atleta-lab.
+
+Windows x64 • Python/Tkinter • EXE portátil, aproximadamente 11 MB.

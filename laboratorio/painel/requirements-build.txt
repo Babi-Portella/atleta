@@ -1,0 +1,4 @@
+pyinstaller==6.22.2
+bcrypt==4.3.0
+pyserial==3.5
+PyMySQL[rsa]==1.1.2
