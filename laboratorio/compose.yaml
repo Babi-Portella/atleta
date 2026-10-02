@@ -1,0 +1,42 @@
+name: atleta-lab
+services:
+  mysql:
+    image: mysql:8.4.8@sha256:2952e3be7807f06fc18de50b3ea1a632d5c70d63482ff7d7376fe3aa8999babf
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Execute lab.py init}
+    ports:
+      - "127.0.0.1:${MYSQL_PORT:-33070}:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./runtime/01-init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 --silent"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+    restart: "no"
+  emqx:
+    image: emqx/emqx:6.1.1@sha256:321816097adec308ef3836bca578f0b909e134ca8bb0fffe72c32920c8f2b39c
+    hostname: emqx.atleta.local
+    environment:
+      EMQX_NODE__NAME: emqx@emqx.atleta.local
+    ports:
+      - "${BIND_ADDRESS:-127.0.0.1}:${MQTT_PORT:-18830}:1883"
+      - "${BIND_ADDRESS:-127.0.0.1}:${DASHBOARD_PORT:-18084}:18083"
+    volumes:
+      - emqx_data:/opt/emqx/data
+      - emqx_log:/opt/emqx/log
+      - ./runtime/base.hocon:/opt/emqx/etc/base.hocon:ro
+    depends_on:
+      mysql:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "/opt/emqx/bin/emqx", "ctl", "status"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+    restart: "no"
+volumes:
+  mysql_data:
+  emqx_data:
+  emqx_log:

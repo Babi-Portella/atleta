@@ -1,0 +1,10 @@
+runtime/
+config.local.json
+firmware/.pio/
+firmware/.vscode/
+__pycache__/
+*.pyc
+entrega/*.zip
+painel/build/
+endereco-servidor.json
+migracao/

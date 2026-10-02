@@ -1,0 +1,11 @@
+{
+  "wifi_ssid": "",
+  "wifi_password": "",
+  "mqtt_host": "",
+  "mqtt_port": 1883,
+  "device_id": "m5-atleta-01",
+  "weight_kg": null,
+  "step_length_m": null,
+  "activity_met": null,
+  "athlete_id": null
+}
