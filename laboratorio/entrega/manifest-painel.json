@@ -1,0 +1,65 @@
+{
+  "version": "1.5.0",
+  "target": "Windows x64",
+  "python": "3.10.11",
+  "pyinstaller": "6.22.2",
+  "files": {
+    "PainelIP.exe": {
+      "bytes": 14533045,
+      "sha256": "54b5e091690c5f428b7caff64387fe1a651f8b6c1b4cca821ec82f5f80bbec94"
+    },
+    "painel-ip-portatil.zip": {
+      "bytes": 14264561,
+      "sha256": "6bc5f83355091efe364d73f24447569e4548f421c0e6afaa5d3bb98208c7d7f5"
+    },
+    "app.py": {
+      "bytes": 19741,
+      "sha256": "79e02b7512ea218874066ee0dd6d4b24bad3b73e6fdb7621a0da7706bb4b3763"
+    },
+    "rede.py": {
+      "bytes": 9903,
+      "sha256": "2dec89770722fb496d4c9d84d28842fbf83f63e67ce2e38e47d6576770a7d6d1"
+    },
+    "servidor.py": {
+      "bytes": 16299,
+      "sha256": "1a704adf770d7c4669622de52ea8ab01bdd3fbf90e3d64aea3f7415303708293"
+    },
+    "build.py": {
+      "bytes": 3512,
+      "sha256": "f91ed4fbd813b749dc3f3928d5cbe901c20d2608bbef1b85136192725c508fd1"
+    },
+    "requirements-build.txt": {
+      "bytes": 68,
+      "sha256": "a981fe79098bc76df050012cd2e251af77f9674a00586457ee73a14a7616bd72"
+    },
+    "configurar_m5.py": {
+      "bytes": 10727,
+      "sha256": "386266b9a8b26fd0914a89da39464b9af329f5959f2c9d5cde0c3422bfcd056d"
+    },
+    "m5_serial.py": {
+      "bytes": 2521,
+      "sha256": "d2821629d5e58f6a1ce606f97bd50437600572c4f47cf2e19a17b38182398597"
+    },
+    "dados_atleta.py": {
+      "bytes": 14971,
+      "sha256": "595758f79d2cfda7fbf8e4021df5482a79f978d9fd500bd2c8bb22188a2f45a0"
+    },
+    "migracao.py": {
+      "bytes": 9924,
+      "sha256": "529039ec9abbd7d0ed8f9c64a48da87c878471435c12987811dc094e2448b1c6"
+    },
+    "wifi_pc.py": {
+      "bytes": 2737,
+      "sha256": "a290de878ee7feed45b4c3355238789b7bd95765d75361befbd0cf1e8ca881a9"
+    },
+    "conexao_m5.py": {
+      "bytes": 7648,
+      "sha256": "36811b7a8f94936028a523e6882e346a5b09295206a4abfc3f94b0a7bc5010d2"
+    },
+    "lab.py": {
+      "bytes": 12141,
+      "sha256": "1a742e0852e19a674d3dd754657d31df9f7f057851a8fff4b3ca61ca7236e7dd"
+    }
+  },
+  "credentials_bundled": false
+}
